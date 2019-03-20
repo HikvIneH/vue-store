@@ -1,0 +1,40 @@
+{
+  "name": "divante-ltd/coreshop-vsbridge",
+  "type": "pimcore-bundle",
+  "license": "MIT",
+  "description": "coreshop-vsbridge",
+  "keywords": [
+    "pimcore",
+    "pimcore-plugin"
+  ],
+  "homepage": "https://divante.co",
+  "autoload": {
+    "psr-4": {
+      "CoreShop2VueStorefrontBundle\\": "src/"
+    }
+  },
+  "require": {
+    "php": ">=7.1",
+    "cocur/slugify": "^3.1",
+    "coreshop/core-shop": "^2.0",
+    "gesdinet/jwt-refresh-token-bundle": "^0.5.3",
+    "gfreeau/get-jwt-bundle": "^2.0",
+    "ongr/elasticsearch-bundle": "^5.2",
+    "lexik/jwt-authentication-bundle": "^2.5",
+    "nelmio/cors-bundle": "^1.5",
+    "pimcore/pimcore": "^5.4.0",
+    "symfony-bundles/json-request-bundle": "^2.0"
+  },
+  "require-dev": {
+    "cache/integration-tests": "^0.15.0",
+    "mockery/mockery": "^1.1"
+  },
+  "minimum-stability": "dev",
+  "extra": {
+    "pimcore": {
+      "bundles": [
+        "CoreShop2VueStorefrontBundle\\CoreShop2VueStorefrontBundle"
+      ]
+    }
+  }
+}
