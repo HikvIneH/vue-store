@@ -1,0 +1,25 @@
+version: '3.0'
+services:
+  app:
+    # image: divante/vue-storefront-api:latest
+    build:
+      context: .
+      dockerfile: docker/katring-backend/Dockerfile
+    depends_on:
+      - es1
+      - redis
+    env_file: docker/katring-backend/default.env
+    environment:
+      VS_ENV: dev
+    volumes:
+      - './config:/var/www/config'
+      - './ecosystem.json:/var/www/ecosystem.json'
+      - './migrations:/var/www/migrations'
+      - './package.json:/var/www/package.json'
+      - './scripts:/var/www/scripts'
+      - './src:/var/www/src'
+      - './var:/var/www/var'
+    tmpfs:
+      - /var/www/dist
+    ports:
+      - '8080:8080'
