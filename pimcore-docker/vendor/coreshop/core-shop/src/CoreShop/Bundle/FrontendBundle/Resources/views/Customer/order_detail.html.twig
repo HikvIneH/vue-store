@@ -1,0 +1,16 @@
+{% extends '@CoreShopFrontend/layout-full.html.twig' %}
+
+{% block center %}
+    <div id="main-container" class="container p-0">
+
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{{ coreshop_path('coreshop_index') }}">{{ 'coreshop.ui.home'|trans }}</a></li>
+                <li class="breadcrumb-item"><a href="{{ coreshop_path(customer, 'coreshop_customer_profile') }}">{{ 'coreshop.ui.profile'|trans }}</a></li>
+                <li class="breadcrumb-item"><a href="{{ coreshop_path(customer, 'coreshop_customer_orders') }}">{{ 'coreshop.ui.orders'|trans }}</a></li>
+                <li class="breadcrumb-item active">{{ 'coreshop.ui.order'|trans }}</li>
+            </ol>
+        </nav>
+        {% include '@CoreShopFrontend/Common/order_detail.html.twig' with {order: order} only %}
+    </div>
+{% endblock %}

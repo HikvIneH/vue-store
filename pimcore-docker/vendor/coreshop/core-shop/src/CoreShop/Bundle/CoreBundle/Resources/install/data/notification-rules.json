@@ -1,0 +1,170 @@
+[
+  {
+    "name": "User Register",
+    "type": "user",
+    "active": true,
+    "conditions": [
+      {
+        "type": "user.userType",
+        "configuration": {
+          "userType": "register"
+        }
+      }
+    ],
+    "actions": [
+      {
+        "type": "user.mail",
+        "configuration": {
+          "mails": {
+            "de": "/de/shop/email/user-registered",
+            "en": "/en/shop/email/user-registered"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "name": "User Reset Password",
+    "type": "user",
+    "active": true,
+    "conditions": [
+      {
+        "type": "user.userType",
+        "configuration": {
+          "userType": "password-reset"
+        }
+      }
+    ],
+    "actions": [
+      {
+        "type": "user.mail",
+        "configuration": {
+          "mails": {
+            "de": "/de/shop/email/user-reset-password",
+            "en": "/en/shop/email/user-reset-password"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "name": "User Newsletter Double-Opt-In",
+    "type": "user",
+    "active": true,
+    "conditions": [
+      {
+        "type": "user.userType",
+        "configuration": {
+          "userType": "newsletter-double-opt-in"
+        }
+      }
+    ],
+    "actions": [
+      {
+        "type": "user.mail",
+        "configuration": {
+          "mails": {
+            "de": "/de/shop/email/user-newsletter-confirm",
+            "en": "/en/shop/email/user-newsletter-confirm"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "name": "User Newsletter Confirmed",
+    "type": "user",
+    "active": true,
+    "conditions": [
+      {
+        "type": "user.userType",
+        "configuration": {
+          "userType": "newsletter-confirmed"
+        }
+      }
+    ],
+    "actions": [
+      {
+        "type": "user.mail",
+        "configuration": {
+          "mails": {
+            "de": "/de/shop/email/user-newsletter-confirmed",
+            "en": "/en/shop/email/user-newsletter-confirmed"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "name": "Order Shipped",
+    "type": "order",
+    "active": true,
+    "conditions": [
+      {
+        "type": "order.orderShippingTransition",
+        "configuration": {
+          "transition": "ship"
+        }
+      }
+    ],
+    "actions": [
+      {
+        "type": "order.orderMail",
+        "configuration": {
+          "mails": {
+            "de": "/de/shop/email/order-shipped",
+            "en": "/en/shop/email/order-shipped"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "name": "Order Confirmation",
+    "type": "order",
+    "active": true,
+    "conditions": [
+      {
+        "type": "order.orderTransition",
+        "configuration": {
+          "transition": "confirm"
+        }
+      }
+    ],
+    "actions": [
+      {
+        "type": "order.mail",
+        "configuration": {
+          "mails": {
+            "de": "/de/shop/email/order-confirmation",
+            "en": "/en/shop/email/order-confirmation"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "name": "Order Comment",
+    "type": "order",
+    "active": true,
+    "conditions": [
+      {
+        "type": "order.comment",
+        "configuration": {
+          "commentAction": "create"
+        }
+      }
+    ],
+    "actions": [
+      {
+        "type": "order.orderMail",
+        "configuration": {
+          "mails": {
+            "de": "/de/shop/email/user-order-comment",
+            "en": "/en/shop/email/user-order-comment"
+          }
+        }
+      }
+    ]
+  }
+]

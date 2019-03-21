@@ -1,0 +1,51 @@
+imports:
+    - { resource: "services/form.yml" }
+    - { resource: "services/shipping-rules.yml" }
+    - { resource: "services/pimcore.yml" }
+
+services:
+    _defaults:
+        public: true
+
+  # Carrier Validator
+    coreshop.shipping.carrier.validator.composite:
+        class: CoreShop\Component\Shipping\Validator\CompositeShippableCarrierValidator
+        public: false
+
+    # Carrier Processor
+    coreshop.carrier.resolver:
+        class: CoreShop\Component\Shipping\Resolver\CarriersResolver
+        arguments:
+            - '@coreshop.repository.carrier'
+            - '@coreshop.shipping.carrier.validator'
+
+    # Carrier Price Calculator
+    coreshop.registry.shipping.price_calculators:
+        class: CoreShop\Component\Registry\PrioritizedServiceRegistry
+        arguments:
+            - CoreShop\Component\Shipping\Calculator\CarrierPriceCalculatorInterface
+            - shipping-price-calculators
+
+    coreshop.carrier.price_calculator:
+        class: CoreShop\Component\Shipping\Calculator\CarrierPriceCalculator
+        arguments:
+            - '@coreshop.registry.shipping.price_calculators'
+
+    coreshop.carrier.price_calculator.shipping_rules:
+        class: CoreShop\Component\Shipping\Calculator\CarrierShippingRulePriceCalculator
+        arguments:
+            - '@coreshop.carrier.shipping_rule.checker'
+            - '@coreshop.carrier.processor.shipping_rules'
+        tags:
+            - { name: coreshop.shipping.price_calculator, type: shipping-rule, priority: 256 }
+
+    coreshop.carrier.price_calculator.default:
+        class: CoreShop\Component\Shipping\Calculator\CompositePriceCalculator
+        arguments:
+            - ['@coreshop.carrier.price_calculator']
+
+    coreshop.shipping.default_resolver.cheapest:
+        class: CoreShop\Component\Shipping\Resolver\CheapestDefaultCarrierResolver
+        arguments:
+            - '@coreshop.carrier.resolver'
+            - '@coreshop.carrier.price_calculator'

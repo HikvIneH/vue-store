@@ -1,0 +1,52 @@
+imports:
+    - { resource: 'services/form.yml' }
+    - { resource: 'services/extension.yml' }
+    - { resource: 'services/factory.yml' }
+
+services:
+    _defaults:
+        public: true
+
+    coreshop.form_registry.payum_gateway_config:
+        class: CoreShop\Bundle\ResourceBundle\Form\Registry\FormTypeRegistry
+
+    coreshop.payum.http_client:
+        class: Payum\Core\HttpClientInterface
+        factory: [Payum\Core\Bridge\Guzzle\HttpClientFactory, create]
+
+    coreshop.payum_action.resolve_next_route:
+        class: CoreShop\Bundle\PayumBundle\Action\ResolveNextRouteAction
+        tags:
+            - { name: payum.action, all: true, alias: coreshop.resolve_next_route }
+
+    coreshop.payum_action.confirm_order:
+        class: CoreShop\Bundle\PayumBundle\Action\ConfirmOrderAction
+        arguments:
+            - '@coreshop.state_machine_applier'
+        tags:
+            - { name: payum.action, all: true, alias: coreshop.confirm_order }
+
+    # Offline Payment
+    coreshop.payum_action.offline.convert_payment:
+        class: CoreShop\Bundle\PayumBundle\Action\Offline\ConvertPaymentAction
+        tags:
+            - { name: payum.action, factory: offline, alias: coreshop.offline.convert_payment }
+
+    coreshop.payum_action.offine.resolve_next_route:
+        class: CoreShop\Bundle\PayumBundle\Action\Offline\ResolveNextRouteAction
+        arguments:
+            - '@coreshop.repository.order'
+        tags:
+            - { name: payum.action, factory: offline, alias: coreshop.offline.resolve_next_route }
+
+    coreshop.payum_action.offine.confirm_order:
+        class: CoreShop\Bundle\PayumBundle\Action\Offline\ConfirmOrderAction
+        arguments:
+            - '@coreshop.state_machine_applier'
+        tags:
+            - { name: payum.action, factory: offline, alias: coreshop.offline.confirm_order }
+
+    coreshop.payum_action.offline.status:
+        class: CoreShop\Bundle\PayumBundle\Action\Offline\StatusAction
+        tags:
+            - { name: payum.action, factory: offline, alias: coreshop.offline.status }

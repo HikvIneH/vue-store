@@ -1,0 +1,19 @@
+<!-- src/Acme/DemoBundle/Resources/config/services.xml -->
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <service id="gfreeau_get_jwt.security.authentication.listener"
+                 class="Gfreeau\Bundle\GetJWTBundle\Security\Firewall\GetJWTListener" public="false" abstract="true">
+            <tag name="monolog.logger" channel="security" />
+            <argument type="service" id="security.token_storage"/>
+            <argument type="service" id="security.authentication.manager" />
+            <argument /> <!-- Provider-shared Key -->
+            <argument type="service" id="lexik_jwt_authentication.handler.authentication_success" />
+            <argument type="service" id="lexik_jwt_authentication.handler.authentication_failure" />
+            <argument /> <!-- Options -->
+            <argument type="service" id="logger" on-invalid="null" />
+        </service>
+    </services>
+</container>

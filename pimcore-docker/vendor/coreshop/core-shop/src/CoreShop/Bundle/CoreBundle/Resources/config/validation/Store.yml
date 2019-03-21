@@ -1,0 +1,4 @@
+CoreShop\Component\Core\Model\Store:
+    properties:
+        baseCountry:
+            - NotBlank: { groups: [coreshop] }

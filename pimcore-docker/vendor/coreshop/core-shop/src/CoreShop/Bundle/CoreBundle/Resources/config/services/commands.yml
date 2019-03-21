@@ -1,0 +1,66 @@
+services:
+    coreshop.command.install.abstract:
+        abstract: true
+        class: CoreShop\Bundle\CoreBundle\Command\AbstractInstallCommand
+        arguments:
+            - '@kernel'
+            - '@coreshop.installer.checker.command_directory'
+
+    coreshop.command.install.resources:
+        class: CoreShop\Bundle\CoreBundle\Command\InstallResourcesCommand
+        parent: coreshop.command.install.abstract
+        public: true
+        tags:
+          - { name: console.command, command: 'coreshop:install:resources' }
+
+    coreshop.command.install.database:
+        class: CoreShop\Bundle\CoreBundle\Command\InstallDatabaseCommand
+        public: true
+        arguments:
+            - '@kernel'
+            - '@coreshop.installer.checker.command_directory'
+            - '@coreshop.commands_provider.database_setup'
+        tags:
+          - { name: console.command, command: 'coreshop:install:database' }
+
+    coreshop.command.install.demo:
+        class: CoreShop\Bundle\CoreBundle\Command\InstallDemoCommand
+        parent: coreshop.command.install.abstract
+        public: true
+        tags:
+          - { name: console.command, command: 'coreshop:install:demo' }
+
+    coreshop.command.install.fixture:
+        class: CoreShop\Bundle\CoreBundle\Command\InstallFixturesCommand
+        parent: coreshop.command.install.abstract
+        public: true
+        tags:
+          - { name: console.command, command: 'coreshop:install:fixtures' }
+
+    coreshop.command.install.folders:
+        class: CoreShop\Bundle\CoreBundle\Command\InstallFoldersCommand
+        public: true
+        arguments:
+            - '@kernel'
+            - '@coreshop.installer.checker.command_directory'
+            - '@coreshop.installer.executor.folder_installer'
+        tags:
+          - { name: console.command, command: 'coreshop:install:folders' }
+
+    coreshop.command.install:
+        class: CoreShop\Bundle\CoreBundle\Command\InstallCommand
+        parent: coreshop.command.install.abstract
+        public: true
+        arguments:
+            $migrationManager: '@Pimcore\Migrations\MigrationManager'
+            $bundle: "@=service('kernel').getBundle('CoreShopCoreBundle')"
+            $installer: '@CoreShop\Bundle\CoreBundle\Installer'
+        tags:
+          - { name: console.command, command: 'coreshop:install' }
+
+    coreshop.command.migrate:
+        class: CoreShop\Bundle\CoreBundle\Command\MigrateCommand
+        public: true
+        tags:
+            - { name: console.command, command: 'coreshop:migrate' }
+

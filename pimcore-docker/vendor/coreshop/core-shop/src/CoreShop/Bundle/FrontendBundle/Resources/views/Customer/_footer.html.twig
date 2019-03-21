@@ -1,0 +1,19 @@
+{% if not catalogMode %}
+<div class="col-md-2 col-sm-6">
+    <h5>{{ 'coreshop.ui.account'|trans }}</h5>
+    <ul>
+        {% if customer %}
+            <li><a href="{{ coreshop_path(customer, 'coreshop_customer_profile') }}">{{ 'coreshop.ui.account'|trans }}</a></li>
+            <li><a href="{{ coreshop_path(customer, 'coreshop_customer_orders') }}">{{ 'coreshop.ui.orders'|trans }}</a></li>
+            <li><a href="{{ coreshop_path(customer, 'coreshop_customer_addresses') }}">{{ 'coreshop.ui.addresses'|trans }}</a></li>
+            <li><a href="{{ coreshop_path(customer, 'coreshop_customer_settings') }}">{{ 'coreshop.ui.personal_information'|trans }}</a></li>
+            <li><a href="{{ coreshop_path('coreshop_wishlist_summary') }}" >{{ 'coreshop.ui.wishlist' }}</a></li>
+        {% else %}
+            <li><a href="{{ coreshop_path('coreshop_register') }}">{{ 'coreshop.ui.register'|trans }}</a></li>
+            <li><a href="{{ coreshop_path('coreshop_login') }}">{{ 'coreshop.ui.login'|trans }}</a></li>
+            <!-- TODO -->
+            <li><a href="#">{{ 'Compare' }}</a></li>
+        {% endif %}
+    </ul>
+</div>
+{% endif %}

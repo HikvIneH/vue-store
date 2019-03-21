@@ -1,0 +1,13 @@
+imports:
+    - { resource: "services/form.yml" }
+    - { resource: "services/pimcore.yml" }
+
+services:
+    _defaults:
+        public: true
+
+    coreshop.collector.taxes:
+        class: CoreShop\Component\Taxation\Collector\TaxCollector
+        arguments:
+            - '@coreshop.repository.tax_rate'
+            - '@coreshop.factory.tax_item'

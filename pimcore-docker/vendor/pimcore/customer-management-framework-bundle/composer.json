@@ -1,0 +1,43 @@
+{
+    "name": "pimcore/customer-management-framework-bundle",
+    "license": "GPL-3.0-or-later",
+    "type": "pimcore-bundle",
+    "config": {
+        "sort-packages": true
+    },
+    "require": {
+        "box/spout": "^2.7",
+        "drewm/mailchimp-api": "*",
+        "guzzlehttp/guzzle": ">=4.1.4 <7.0",
+        "hwi/oauth-bundle": "~0.6.2",
+        "php-http/httplug-bundle": "~1.10.0",
+        "php-http/guzzle6-adapter": "^1.1",
+        "mtdowling/cron-expression": "^1.1.0",
+        "pear/archive_tar": "^1.4.3",
+        "pimcore/core-version": ">=5.2.0 <5.8",
+        "pimcore/number-sequence-generator": "^1.0.1",
+        "pimcore/object-merger": "~1.4",
+        "pimcore/search-query-parser": "^1.2.4"
+    },
+    "require-dev": {
+        "codeception/codeception": "^2.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "CustomerManagementFrameworkBundle\\": "src/",
+            "Pimcore\\": "core-extension/Pimcore/"
+        },
+        "exclude-from-classmap": [
+            "frontend/",
+            "frontend-samples/",
+            "install/"
+        ]
+    },
+    "extra": {
+        "pimcore": {
+            "bundles": [
+                "CustomerManagementFrameworkBundle\\PimcoreCustomerManagementFrameworkBundle"
+            ]
+        }
+    }
+}

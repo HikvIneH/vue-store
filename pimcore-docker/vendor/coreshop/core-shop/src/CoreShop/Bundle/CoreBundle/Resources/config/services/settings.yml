@@ -1,0 +1,24 @@
+services:
+    _defaults:
+        public: true
+
+    coreshop.admin_controller.settings:
+        class: CoreShop\Bundle\CoreBundle\Controller\SettingsController
+        arguments:
+          - '@coreshop.resource_controller.view_handler'
+        calls:
+          - [setContainer, ['@service_container']]
+
+    coreshop.admin_controller.reports:
+        class: CoreShop\Bundle\CoreBundle\Controller\ReportsController
+        arguments:
+          - '@coreshop.resource_controller.view_handler'
+        calls:
+          - [setContainer, ['@service_container']]
+
+    coreshop.admin_controller.portlets:
+        class: CoreShop\Bundle\CoreBundle\Controller\PortletsController
+        arguments:
+          - '@coreshop.resource_controller.view_handler'
+        calls:
+          - [setContainer, ['@service_container']]

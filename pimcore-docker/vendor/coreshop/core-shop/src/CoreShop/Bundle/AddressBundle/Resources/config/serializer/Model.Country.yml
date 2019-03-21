@@ -1,0 +1,39 @@
+CoreShop\Component\Address\Model\Country:
+    exclusion_policy: ALL
+    xml_root_name: country
+    properties:
+        id:
+            expose: true
+            type: integer
+            groups: [List, Detailed]
+        isoCode:
+            expose: true
+            type: string
+            groups: [Detailed]
+        active:
+            expose: true
+            type: boolean
+            groups: [List, Detailed]
+        zone:
+            expose: true
+            type: relation
+            groups: [Detailed]
+        addressFormat:
+            expose: true
+            type: string
+            groups: [Detailed]
+        salutations:
+            expose: true
+            type: array
+            groups: [Detailed]
+        translations:
+            expose: true
+            type: array
+            groups: [Detailed]
+    virtual_properties:
+        getZoneName:
+            serialized_name: zoneName
+            groups: [List, Detailed]
+        getName:
+            serialized_name: name
+            groups: [List, Detailed]

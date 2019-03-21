@@ -1,0 +1,28 @@
+services:
+    _defaults:
+        public: true
+
+    coreshop.registry.product.rules.fetcher:
+        class: CoreShop\Component\Registry\ServiceRegistry
+        arguments:
+            - 'CoreShop\Component\Product\Rule\Fetcher\ValidRulesFetcherInterface'
+
+    coreshop.product.rules.fetcher:
+        class: CoreShop\Component\Product\Rule\Fetcher\CompositeValidRuleFetcher
+        arguments:
+            - '@coreshop.registry.product.rules.fetcher'
+
+    # Rule Assessor
+    coreshop.rule.availability_assessor.product_price:
+        class: CoreShop\Bundle\RuleBundle\Assessor\RuleAvailabilityAssessor
+        arguments:
+             - '@coreshop.repository.product_price_rule'
+        tags:
+            - { name: coreshop.registry.rule_availability_assessor, type: product_price }
+
+    coreshop.rule.availability_assessor.product_specific_price:
+        class: CoreShop\Bundle\RuleBundle\Assessor\RuleAvailabilityAssessor
+        arguments:
+             - '@coreshop.repository.product_specific_price_rule'
+        tags:
+            - { name: coreshop.registry.rule_availability_assessor, type: product_specific_price }

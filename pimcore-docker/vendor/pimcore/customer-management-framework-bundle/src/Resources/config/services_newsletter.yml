@@ -1,0 +1,46 @@
+
+services:
+    _defaults:
+        public: true
+        autowire: true
+        autoconfigure: true
+
+
+    CustomerManagementFrameworkBundle\Newsletter\Queue\NewsletterQueueInterface:
+        class: CustomerManagementFrameworkBundle\Newsletter\Queue\DefaultNewsletterQueue
+
+    CustomerManagementFrameworkBundle\Newsletter\Manager\NewsletterManagerInterface:
+        class: CustomerManagementFrameworkBundle\Newsletter\Manager\DefaultNewsletterManager
+
+    CustomerManagementFrameworkBundle\Newsletter\ProviderHandler\Mailchimp\MailChimpExportService:
+        arguments:
+            - '@DrewM\MailChimp\MailChimp'
+
+    CustomerManagementFrameworkBundle\Newsletter\ProviderHandler\Mailchimp\SegmentExporter: ~
+
+    CustomerManagementFrameworkBundle\Newsletter\ProviderHandler\Mailchimp\TemplateExporter: ~
+
+    CustomerManagementFrameworkBundle\Newsletter\ProviderHandler\Mailchimp\CustomerExporter\SingleExporter: ~
+    CustomerManagementFrameworkBundle\Newsletter\ProviderHandler\Mailchimp\CustomerExporter\BatchExporter: ~
+
+    CustomerManagementFrameworkBundle\Newsletter\ProviderHandler\Mailchimp\WebhookProcessor: ~
+    CustomerManagementFrameworkBundle\Newsletter\ProviderHandler\Mailchimp\UpdateFromMailchimpProcessor: ~
+    CustomerManagementFrameworkBundle\Newsletter\ProviderHandler\Mailchimp\CliSyncProcessor:
+        arguments:
+           - '%pimcore_customer_management_framework.newsletter.mailchimp.cliUpdatesPimcoreUserName%'
+
+
+    DrewM\MailChimp\MailChimp:
+        arguments:
+            - '%pimcore_customer_management_framework.newsletter.mailchimp.apiKey%'
+
+    cmf.document.newsletter.factory.segmentAddressSource:
+        class: Pimcore\Document\Newsletter\DefaultAddressSourceAdapterFactory
+        arguments:
+            - 'CustomerManagementFrameworkBundle\Newsletter\AddressSource\SegmentAddressSource'
+
+
+    CustomerManagementFrameworkBundle\Event\NewsletterTerminateListener:
+        tags:
+            - { name: kernel.event_listener, event: kernel.terminate, method: onTerminate }
+            - { name: kernel.event_listener, event: console.terminate, method: onTerminate }

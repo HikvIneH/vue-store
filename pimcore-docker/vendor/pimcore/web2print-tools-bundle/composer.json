@@ -1,0 +1,24 @@
+{
+  "name": "pimcore/web2print-tools-bundle",
+  "type": "pimcore-bundle",
+  "license": "GPL-3.0+",
+  "config": {
+    "sort-packages": true
+  },
+  "require": {
+    "pimcore/core-version": ">=5.2.0 <5.8",
+    "pimcore/output-data-config-toolkit-bundle": "~2"
+  },
+  "autoload": {
+    "psr-4": {
+      "Web2PrintToolsBundle\\": "src/"
+    }
+  },
+  "extra": {
+    "pimcore": {
+      "bundles": [
+        "Web2PrintToolsBundle\\Web2PrintToolsBundle"
+      ]
+    }
+  }
+}

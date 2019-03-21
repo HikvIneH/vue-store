@@ -1,0 +1,160 @@
+{
+  "name": "coreshop/core-shop",
+  "type": "pimcore-bundle",
+  "license": "GPL-3.0-or-later",
+  "description": "CoreShop - Pimcore eCommerce",
+  "keywords": [
+    "pimcore",
+    "coreshop",
+    "pimcore-ecommerce",
+    "ecommerce",
+    "pimcore-plugin"
+  ],
+  "homepage": "https://www.coreshop.org",
+  "authors": [
+    {
+      "name": "Dominik Pfaffenbauer",
+      "email": "dominik@pfaffenbauer.at",
+      "homepage": "https://www.pfaffenbauer.at/",
+      "role": "Developer"
+    }
+  ],
+  "replace": {
+    "coreshop/resource": "self.version",
+    "coreshop/address": "self.version",
+    "coreshop/configuration": "self.version",
+    "coreshop/currency": "self.version",
+    "coreshop/customer": "self.version",
+    "coreshop/index": "self.version",
+    "coreshop/locale": "self.version",
+    "coreshop/notification": "self.version",
+    "coreshop/order": "self.version",
+    "coreshop/payment": "self.version",
+    "coreshop/product": "self.version",
+    "coreshop/registry": "self.version",
+    "coreshop/rule": "self.version",
+    "coreshop/sequence": "self.version",
+    "coreshop/shipping": "self.version",
+    "coreshop/store": "self.version",
+    "coreshop/taxation": "self.version",
+    "coreshop/core": "self.version",
+    "coreshop/resource-bundle": "self.version",
+    "coreshop/address-bundle": "self.version",
+    "coreshop/admin-bundle": "self.version",
+    "coreshop/configuration-bundle": "self.version",
+    "coreshop/currency-bundle": "self.version",
+    "coreshop/customer-bundle": "self.version",
+    "coreshop/frontend-bundle": "self.version",
+    "coreshop/index-bundle": "self.version",
+    "coreshop/locale-bundle": "self.version",
+    "coreshop/money-bundle": "self.version",
+    "coreshop/notification-bundle": "self.version",
+    "coreshop/order-bundle": "self.version",
+    "coreshop/payment-bundle": "self.version",
+    "coreshop/payum-bundle": "self.version",
+    "coreshop/product-bundle": "self.version",
+    "coreshop/rule-bundle": "self.version",
+    "coreshop/sequence-bundle": "self.version",
+    "coreshop/shipping-bundle": "self.version",
+    "coreshop/store-bundle": "self.version",
+    "coreshop/taxation-bundle": "self.version",
+    "coreshop/tracking-bundle": "self.version",
+    "coreshop/fixture-bundle": "self.version",
+    "coreshop/core-bundle": "self.version",
+    "coreshop/pimcore": "self.version",
+    "coreshop/storage-list": "self.version",
+    "coreshop/inventory": "self.version",
+    "coreshop/inventory-bundle": "self.version",
+    "coreshop/workflow-bundle": "self.version",
+    "coreshop/seo": "self.version",
+    "coreshop/seo-bundle": "self.version",
+    "coreshop/pimcore-bundle": "self.version",
+    "coreshop/tracking": "self.version"
+  },
+  "require": {
+    "doctrine/orm": "~2.5",
+    "jms/serializer-bundle": "^1.3",
+    "webmozart/assert": "^1.2",
+    "doctrine/doctrine-cache-bundle": "^1.3",
+    "payum/payum-bundle": "^2.2",
+    "payum/offline": "^1.4",
+    "payum/sofort": "^1.4",
+    "payum/paypal-express-checkout-nvp": "^1.4",
+    "php-http/guzzle6-adapter": "^1.1",
+    "rinvex/countries": "^5.0",
+    "gedmo/doctrine-extensions": "^2.4.12",
+    "stof/doctrine-extensions-bundle": "^1.2",
+    "fzaninotto/faker": "^1.6",
+    "liip/theme-bundle": "^1.4",
+    "dachcom-digital/emailizr": "^1.0.6",
+    "symfony/twig-bundle": "~3.2",
+    "doctrine/data-fixtures": "^1.0",
+    "pimcore/pimcore": "^5.4.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^6",
+    "symfony/phpunit-bridge": "^3",
+    "behat/behat": "^3.3",
+    "friends-of-behat/context-service-extension": "^1.1",
+    "friends-of-behat/cross-container-extension": "^1.1",
+    "friends-of-behat/service-container-extension": "^1.0",
+    "friends-of-behat/symfony-extension": "^1.2",
+    "friends-of-behat/variadic-extension": "^1.1",
+    "symplify/easy-coding-standard": "^4.3.0",
+    "leanphp/behat-code-coverage": "^3.2",
+    "phpstan/phpstan": "^0.10.5",
+    "phpstan/phpstan-doctrine": "^0.10",
+    "phpstan/phpstan-shim": "^0.10",
+    "phpstan/phpstan-symfony": "^0.10",
+    "phpstan/phpstan-webmozart-assert": "^0.10"
+  },
+  "autoload": {
+    "psr-4": {
+      "CoreShop\\Bundle\\": "src/CoreShop/Bundle/",
+      "CoreShop\\Component\\": "src/CoreShop/Component/",
+      "CoreShop\\Behat\\": "src/CoreShop/Behat/"
+    },
+    "exclude-from-classmap": [
+      "src/CoreShop/*/*/Tests/"
+    ]
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "CoreShop\\Test\\": "tests/lib/CoreShop/Test"
+    },
+    "classmap": [
+      "app/AppKernel.php"
+    ]
+  },
+  "scripts": {
+    "post-create-project-cmd": "Pimcore\\Composer::postCreateProject",
+    "post-install-cmd": [
+      "Pimcore\\Composer::postInstall",
+      "@symfony-scripts"
+    ],
+    "post-update-cmd": [
+      "Pimcore\\Composer::postUpdate",
+      "@symfony-scripts"
+    ],
+    "pre-package-update": [
+      "Pimcore\\Composer::prePackageUpdate"
+    ],
+    "symfony-scripts": [
+      "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
+      "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
+      "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile",
+      "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::prepareDeploymentTarget"
+    ]
+  },
+  "extra": {
+    "symfony-app-dir": "app",
+    "symfony-bin-dir": "bin",
+    "symfony-var-dir": "var",
+    "symfony-web-dir": "web",
+    "symfony-tests-dir": "tests",
+    "symfony-assets-install": "relative",
+    "branch-alias": {
+      "dev-master": "2.0-dev"
+    }
+  }
+}

@@ -1,0 +1,9 @@
+imports:
+    - { resource: "admin.yml" }
+
+pimcore:
+    objects:
+        class_definitions:
+            data:
+                map:
+                    coreShopMoney: CoreShop\Bundle\MoneyBundle\CoreExtension\Money

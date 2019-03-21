@@ -1,0 +1,261 @@
+parameters:
+    cmf.customer_export.items_per_request: 500
+
+    cmf.segmentAssignment.table.raw: plugin_cmf_segment_assignment
+    cmf.segmentAssignment.table.index: plugin_cmf_segment_assignment_index
+    cmf.segmentAssignment.table.queue: plugin_cmf_segment_assignment_queue
+
+services:
+    _defaults:
+        public: true
+        autowire: true
+        autoconfigure: true
+
+    # auto-register all commands as services
+    CustomerManagementFrameworkBundle\Command\:
+        resource: '../../Command'
+        public: false
+
+    CustomerManagementFrameworkBundle\CustomerSaveManager\SaveOptions:
+        arguments:
+          - true
+          - true
+          - true
+          - true
+          - '%pimcore_customer_management_framework.customer_save_manager.enableAutomaticObjectNamingScheme%'
+          - '%pimcore_customer_management_framework.customer_duplicates_services.duplicates_index.enableDuplicatesIndex%'
+          - '%pimcore_customer_management_framework.newsletter.newsletterSyncEnabled%' # needs to be modified when newsletter queue feature is finished
+          - '%pimcore_customer_management_framework.newsletter.newsletterQueueImmediateAsyncExecutionEnabled%' # needs to be modified when newsletter queue feature is finished
+
+
+    CustomerManagementFrameworkBundle\CustomerSaveManager\CustomerSaveManagerInterface:
+        class: CustomerManagementFrameworkBundle\CustomerSaveManager\DefaultCustomerSaveManager
+
+
+
+    CustomerManagementFrameworkBundle\CustomerProvider\CustomerProviderInterface:
+         class: CustomerManagementFrameworkBundle\CustomerProvider\DefaultCustomerProvider
+         arguments:
+            - '%pimcore_customer_management_framework.general.customerPimcoreClass%'
+            - '%pimcore_customer_management_framework.customer_provider.parentPath%'
+
+
+    CustomerManagementFrameworkBundle\CustomerProvider\ObjectNamingScheme\ObjectNamingSchemeInterface:
+         class: CustomerManagementFrameworkBundle\CustomerProvider\ObjectNamingScheme\DefaultObjectNamingScheme
+         arguments:
+            - '%pimcore_customer_management_framework.customer_provider.namingScheme%'
+            - '%pimcore_customer_management_framework.customer_provider.parentPath%'
+            - '%pimcore_customer_management_framework.customer_provider.archiveDir%'
+
+
+    CustomerManagementFrameworkBundle\CustomerSaveValidator\CustomerSaveValidatorInterface:
+        class: CustomerManagementFrameworkBundle\CustomerSaveValidator\DefaultCustomerSaveValidator
+        arguments:
+            - '%pimcore_customer_management_framework.customer_save_validator.requiredFields%'
+            - '%pimcore_customer_management_framework.customer_save_validator.checkForDuplicates%'
+
+
+    CustomerManagementFrameworkBundle\SegmentManager\SegmentManagerInterface:
+        class: CustomerManagementFrameworkBundle\SegmentManager\DefaultSegmentManager
+        arguments:
+            - '%pimcore_customer_management_framework.segment_manager.segmentFolder.calculated%'
+            - '%pimcore_customer_management_framework.segment_manager.segmentFolder.manual%'
+
+    CustomerManagementFrameworkBundle\SegmentManager\SegmentBuilderExecutor\SegmentBuilderExecutorInterface:
+        class: CustomerManagementFrameworkBundle\SegmentManager\SegmentBuilderExecutor\DefaultSegmentBuilderExecutor
+
+    CustomerManagementFrameworkBundle\SegmentManager\SegmentExtractor\SegmentExtractorInterface:
+        class: CustomerManagementFrameworkBundle\SegmentManager\SegmentExtractor\DefaultSegmentExtractor
+
+    CustomerManagementFrameworkBundle\CustomerMerger\CustomerMergerInterface:
+        class: CustomerManagementFrameworkBundle\CustomerMerger\DefaultCustomerMerger
+
+
+    CustomerManagementFrameworkBundle\CustomerDuplicatesService\CustomerDuplicatesServiceInterface:
+        class: CustomerManagementFrameworkBundle\CustomerDuplicatesService\DefaultCustomerDuplicatesService
+        arguments:
+            - '%pimcore_customer_management_framework.customer_duplicates_services.duplicateCheckFields%'
+            - '%pimcore_customer_management_framework.customer_duplicates_services.duplicateCheckTrimmedFields%'
+
+    CustomerManagementFrameworkBundle\DuplicatesIndex\DuplicatesIndexInterface:
+        class: CustomerManagementFrameworkBundle\DuplicatesIndex\DefaultMariaDbDuplicatesIndex
+        arguments:
+            - '%pimcore_customer_management_framework.customer_duplicates_services.duplicates_index.enableDuplicatesIndex%'
+            - '%pimcore_customer_management_framework.customer_duplicates_services.duplicates_index.duplicateCheckFields%'
+            - '%pimcore_customer_management_framework.customer_duplicates_services.duplicates_index.dataTransformers%'
+
+    CustomerManagementFrameworkBundle\SegmentAssignment\Indexer\IndexerInterface:
+        class: CustomerManagementFrameworkBundle\SegmentAssignment\Indexer\Indexer
+        arguments:
+            $segmentAssignmentTable: '%cmf.segmentAssignment.table.raw%'
+            $segmentAssignmentIndexTable: '%cmf.segmentAssignment.table.index%'
+            $segmentAssignmentQueueTable: '%cmf.segmentAssignment.table.queue%'
+
+    CustomerManagementFrameworkBundle\SegmentAssignment\TypeMapper\TypeMapperInterface:
+        class: CustomerManagementFrameworkBundle\SegmentAssignment\TypeMapper\TypeMapper
+
+    CustomerManagementFrameworkBundle\SegmentAssignment\SegmentAssigner\SegmentAssignerInterface:
+        class: CustomerManagementFrameworkBundle\SegmentAssignment\SegmentAssigner\SegmentAssigner
+        arguments:
+            $segmentAssignmentTable: '%cmf.segmentAssignment.table.raw%'
+            $segmentAssignmentQueueTable: '%cmf.segmentAssignment.table.queue%'
+            $segmentAssignmentIndexTable: '%cmf.segmentAssignment.table.index%'
+
+    CustomerManagementFrameworkBundle\SegmentAssignment\QueueBuilder\QueueBuilderInterface:
+        class: CustomerManagementFrameworkBundle\SegmentAssignment\QueueBuilder\DefaultQueueBuilder
+        arguments:
+            $segmentAssignmentQueueTable: '%cmf.segmentAssignment.table.queue%'
+
+    CustomerManagementFrameworkBundle\SegmentAssignment\StoredFunctions\StoredFunctionsInterface:
+        class: CustomerManagementFrameworkBundle\SegmentAssignment\StoredFunctions\DefaultStoredFunctions
+
+    CustomerManagementFrameworkBundle\SegmentAssignment\QueryService\QueryServiceInterface:
+        class: CustomerManagementFrameworkBundle\SegmentAssignment\QueryService\DefaultQueryService
+        arguments:
+            $segmentAssignmentIndexTable: '%cmf.segmentAssignment.table.index%'
+
+    CustomerManagementFrameworkBundle\Maintenance\MaintenanceWorker:
+        arguments:
+            $serviceConfiguration:
+                'executeSegmentBuilderMaintenance': '@CustomerManagementFrameworkBundle\SegmentManager\SegmentBuilderExecutor\SegmentBuilderExecutorInterface'
+                'processQueue': '@CustomerManagementFrameworkBundle\SegmentAssignment\Indexer\IndexerInterface'
+                'cleanUpFilterDefinitions': '@CustomerManagementFrameworkBundle\CustomerView\FilterDefinition\Maintenance'
+                'cleanUpTemporaryCustomers': '@CustomerManagementFrameworkBundle\CustomerView\Customer\Maintenance'
+
+    cmf.logger:
+        alias: monolog.logger.cmf
+
+    cmf.view_formatter:
+        class: CustomerManagementFrameworkBundle\View\Formatter\DefaultViewFormatter
+
+    cmf.activity_view:
+        class: CustomerManagementFrameworkBundle\ActivityView\DefaultActivityView
+        arguments: ['@cmf.view_formatter']
+
+    CustomerManagementFrameworkBundle\ActivityStore\ActivityStoreInterface:
+        class: CustomerManagementFrameworkBundle\ActivityStore\MariaDb
+
+    cmf.activity_store:
+        alias: CustomerManagementFrameworkBundle\ActivityStore\ActivityStoreInterface
+
+    cmf.activity_manager: '@CustomerManagementFrameworkBundle\ActivityManager\ActivityManagerInterface'
+    CustomerManagementFrameworkBundle\ActivityManager\ActivityManagerInterface: '@CustomerManagementFrameworkBundle\ActivityManager\DefaultActivityManager'
+    CustomerManagementFrameworkBundle\ActivityManager\DefaultActivityManager: ~
+
+    cmf.activity_store_entry:
+        class: CustomerManagementFrameworkBundle\Model\ActivityStoreEntry\DefaultActivityStoreEntry
+        shared: false
+
+    cmf.activity_url_tracker:
+        class: CustomerManagementFrameworkBundle\ActivityUrlTracker\DefaultActivityUrlTracker
+
+    cmf.link-activity-definition.linkgenerator:
+        class: CustomerManagementFrameworkBundle\LinkGenerator\LinkActivityDefinitionLinkGenerator
+        arguments:
+          - '%pimcore_customer_management_framework.url_activity_tracker.linkCmfcPlaceholder%'
+
+    cmf.segment_manager.segment_merger:
+        class: CustomerManagementFrameworkBundle\SegmentManager\SegmentMerger\DefaultSegmentMerger
+
+    CustomerManagementFrameworkBundle\SegmentManager\SegmentMerger\DefaultSegmentMerger\MetadataFiller: ~
+
+    cmf.customer_duplicates_view:
+        class: CustomerManagementFrameworkBundle\CustomerDuplicatesView\DefaultCustomerDuplicatesView
+        arguments:
+            - '%pimcore_customer_management_framework.customer_duplicates_services.duplicates_view.listFields%'
+            - '@cmf.view_formatter'
+
+
+    CustomerManagementFrameworkBundle\CustomerView\CustomerViewInterface:
+        class: CustomerManagementFrameworkBundle\CustomerView\DefaultCustomerView
+        arguments: ['@cmf.view_formatter']
+
+    cmf.customer_view:
+        alias: 'CustomerManagementFrameworkBundle\CustomerView\CustomerViewInterface'
+
+    CustomerManagementFrameworkBundle\CustomerView\FilterDefinition\Maintenance: ~
+
+    CustomerManagementFrameworkBundle\CustomerView\Customer\Maintenance: ~
+
+    CustomerManagementFrameworkBundle\CustomerList\SearchHelper: ~
+
+    cmf.potential_duplicate_item:
+        class: CustomerManagementFrameworkBundle\Model\CustomerDuplicates\PotentialDuplicateItem
+        shared: false
+
+
+    cmf.customer_exporter_manager:
+         class: CustomerManagementFrameworkBundle\CustomerList\ExporterManager
+         arguments:
+              - '%pimcore_customer_management_framework.customer_list.exporters%'
+
+
+    cmf.action_trigger.queue:
+        class: CustomerManagementFrameworkBundle\ActionTrigger\Queue\DefaultQueue
+
+    cmf.action_trigger.action_manager:
+        class: CustomerManagementFrameworkBundle\ActionTrigger\ActionManager\DefaultActionManager
+
+    cmf.rest.activities_handler:
+        class: CustomerManagementFrameworkBundle\RESTApi\ActivitiesHandler
+        calls:
+            - [setApiResourceRoute, ['customermanagementframework_rest_api_activities_readrecord']]
+
+    cmf.rest.customers_handler:
+        class: CustomerManagementFrameworkBundle\RESTApi\CustomersHandler
+        calls:
+            - [setApiResourceRoute, ['customermanagementframework_rest_api_customers_readrecord']]
+
+    cmf.rest.segments_of_customer_handler:
+        class: CustomerManagementFrameworkBundle\RESTApi\SegmentsOfCustomerHandler
+
+    cmf.rest.segments_handler:
+        class: CustomerManagementFrameworkBundle\RESTApi\SegmentsHandler
+        calls:
+            - [setApiResourceRoute, ['customermanagementframework_rest_api_segments_readrecord']]
+
+    cmf.rest.segment_groups_handler:
+        class: CustomerManagementFrameworkBundle\RESTApi\SegmentGroupsHandler
+        calls:
+            - [setApiResourceRoute, ['customermanagementframework_rest_api_segmentgroups_readrecord']]
+
+    cmf.rest.deletions_handler:
+        class: CustomerManagementFrameworkBundle\RESTApi\DeletionsHandler
+
+    cmf.encryption_service: '@CustomerManagementFrameworkBundle\Encryption\EncryptionServiceInterface'
+    CustomerManagementFrameworkBundle\Encryption\EncryptionServiceInterface: '@CustomerManagementFrameworkBundle\Encryption\DefaultEncryptionService'
+    CustomerManagementFrameworkBundle\Encryption\DefaultEncryptionService:
+        arguments:
+            - '%pimcore_customer_management_framework.encryption.secret%'
+
+    # The migration installer needs the bundle it is operating on upon construction to be able to build its migration configuration.
+    # As bundles can't be directly used as service argument, we need to make use of the expression language to fetch the bundle
+    # from the kernel upon construction.
+    CustomerManagementFrameworkBundle\Installer:
+        public: true
+        arguments:
+            # fetch the bundle via expression language
+            $bundle: "@=service('kernel').getBundle('PimcoreCustomerManagementFrameworkBundle')"
+
+
+    cmf.custom_report.adapter.term_segment_builder:
+        class: Pimcore\Model\Tool\CustomReport\Adapter\DefaultCustomReportAdapterFactory
+        arguments:
+          - 'CustomerManagementFrameworkBundle\Adapter\TermSegmentBuilder'
+
+    CustomerManagementFrameworkBundle\GDPR\DataProvider\Customers:
+        public: false
+        arguments:
+            $config: '%pimcore.gdpr-data-extrator.customers%'
+
+
+    CustomerManagementFrameworkBundle\GDPR\Consent\ConsentCheckerInterface:
+        class: CustomerManagementFrameworkBundle\GDPR\Consent\ConsentChecker
+        public: false
+
+    cmf.pimcore.data_object.import.operator.factory.customer_segments:
+        class: Pimcore\DataObject\Import\ColumnConfig\Operator\Factory\DefaultOperatorFactory
+        arguments:
+            $className: CustomerManagementFrameworkBundle\Import\ColumnConfig\Operator\CustomerSegments
+        tags:
+            - { name: pimcore.data_object.import.operator_factory, id: CustomerSegments }

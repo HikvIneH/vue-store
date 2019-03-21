@@ -1,0 +1,87 @@
+{
+  "name": "pimcore/demo-ecommerce",
+  "type": "project",
+  "description": "E-Commerce Demo Application for Pimcore 5",
+  "license": "GPL-3.0-or-later",
+  "config": {
+    "optimize-autoloader": true,
+    "sort-packages": true
+  },
+  "require": {
+    "php": ">=7.1",
+    "pimcore/pimcore": "~5.7.0",
+    "pimcore/customer-management-framework-bundle": "^1.9",
+    "pimcore/web2print-tools-bundle": "^2.4",
+    "pimcore/server-side-matomo-tracking": "^0.1",
+    "wikimedia/composer-merge-plugin": "^1.4",
+    "cocur/slugify": "^3.1",
+    "coreshop/core-shop": "^2.0",
+    "gesdinet/jwt-refresh-token-bundle": "^0.5.3",
+    "gfreeau/get-jwt-bundle": "^2.0",
+    "ongr/elasticsearch-bundle": "^5.2",
+    "lexik/jwt-authentication-bundle": "^2.5",
+    "nelmio/cors-bundle": "^1.5",
+    "symfony-bundles/json-request-bundle": "^2.0"
+  },
+  "require-dev": {
+    "cache/integration-tests": "^0.16.0",
+    "codeception/codeception": "~2.4.5"
+  },
+  "autoload": {
+    "psr-4": {
+      "": ["src/"],
+      "Pimcore\\Model\\DataObject\\": "var/classes/DataObject",
+      "Pimcore\\Model\\Object\\": "var/classes/Object",
+      "Website\\": "legacy/website/lib",
+      "CoreShop2VueStorefrontBundle\\": "src/"
+    },
+    "classmap": [
+      "app/AppKernel.php"
+    ]
+  },
+  "scripts": {
+    "post-create-project-cmd": "Pimcore\\Composer::postCreateProject",
+    "post-install-cmd": [
+      "Pimcore\\Composer::postInstall",
+      "@symfony-scripts"
+    ],
+    "post-update-cmd": [
+      "Pimcore\\Composer::postUpdate",
+      "@symfony-scripts",
+      "Pimcore\\Composer::executeMigrationsUp"
+    ],
+    "pre-package-update": [
+      "Pimcore\\Composer::prePackageUpdate"
+    ],
+    "symfony-scripts": [
+      "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
+      "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
+      "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile",
+      "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::prepareDeploymentTarget"
+    ]
+  },
+  "extra": {
+    "pimcore": {
+      "bundles": [
+        "CoreShop2VueStorefrontBundle\\CoreShop2VueStorefrontBundle"
+      ]
+    },
+    "symfony-app-dir": "app",
+    "symfony-bin-dir": "bin",
+    "symfony-var-dir": "var",
+    "symfony-web-dir": "web",
+    "symfony-tests-dir": "tests",
+    "symfony-assets-install": "relative",
+    "merge-plugin": {
+      "include": [
+        "composer.local.json"
+      ],
+      "recurse": true,
+      "replace": true,
+      "merge-dev": true,
+      "merge-extra": false,
+      "merge-extra-deep": false,
+      "merge-scripts": false
+    }
+  }
+}

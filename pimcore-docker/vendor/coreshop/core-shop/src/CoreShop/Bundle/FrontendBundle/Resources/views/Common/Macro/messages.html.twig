@@ -1,0 +1,25 @@
+{% macro default(message, type, translate = true) %}
+    <div class="alert alert-{{ type|default('') }}" role="alert">
+        {{ translate is not null and translate == false ? message : message|trans }}
+    </div>
+{% endmacro %}
+
+{% macro info(message, translate) %}
+    {% import _self as messages %}
+    {{ messages.default(message, 'info', translate) }}
+{% endmacro %}
+
+{% macro success(message, translate) %}
+    {% import _self as messages %}
+    {{ messages.default(message, 'success', translate) }}
+{% endmacro %}
+
+{% macro error(message, translate) %}
+    {% import _self as messages %}
+    {{ messages.default(message, 'danger', translate) }}
+{% endmacro %}
+
+{% macro dynamic(message, type, translate) %}
+    {% import _self as messages %}
+    {{ messages.default(message, type, translate) }}
+{% endmacro %}

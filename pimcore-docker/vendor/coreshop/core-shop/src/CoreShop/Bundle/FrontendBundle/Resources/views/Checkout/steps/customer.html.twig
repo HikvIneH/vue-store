@@ -1,0 +1,28 @@
+{% extends '@CoreShopFrontend/Checkout/layout.html.twig' %}
+{% form_theme guestForm 'bootstrap_4_layout.html.twig' %}
+
+{% block checkout_title %}
+    {{ 'coreshop.ui.customer'|trans }}
+{% endblock %}
+
+{% block checkout %}
+    {{ render(controller('coreshop.frontend.controller.security:loginAction', {renderLayout: false, target: pimcore_url()})) }}
+
+    {% if coreshop_configuration('system.guest.checkout') %}
+        <h2 class="main-heading text-center mt-4">
+            {{ 'coreshop.ui.guest_register'|trans }} <br/>
+        </h2>
+
+        <section class="registration-area">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="card">
+                        <div class="card-body">
+                            {{ form(guestForm, {'method': 'POST'}) }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    {% endif %}
+{% endblock %}

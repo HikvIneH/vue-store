@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="{{ app.request.locale|slice(0, 2) }}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    {%- spaceless -%}
+        {% do pimcore_head_link().appendStylesheet(asset('bundles/coreshopfrontend/static/css/shop.css')) %}
+        {% do pimcore_head_link().appendStylesheet(asset('bundles/coreshopfrontend/static/css/owl.carousel.css')) %}
+
+        {% do pimcore_head_script().appendFile(asset('bundles/coreshopfrontend/static/js/vendor/jquery-1.11.1.min.js')) %}
+        {% do pimcore_head_script().appendFile(asset('bundles/coreshopfrontend/static/js/vendor/popper.min.js')) %}
+        {% do pimcore_head_script().appendFile(asset('bundles/coreshopfrontend/static/js/vendor/bootstrap.min.js')) %}
+        {% do pimcore_head_script().appendFile(asset('bundles/coreshopfrontend/static/js/vendor/owl.carousel.min.js')) %}
+        {% do pimcore_head_script().appendFile(asset('bundles/coreshopfrontend/static/js/handle-prototypes.js')) %}
+        {% do pimcore_head_script().appendFile(asset('bundles/coreshopfrontend/static/js/custom.js')) %}
+        {% do pimcore_head_script().appendFile(asset('bundles/coreshopfrontend/static/js/shop.js')) %}
+
+        {% do pimcore_head_title().setSeparator(' | ') %}
+    {%- endspaceless -%}
+
+    {% block layout_head_meta deferred %}
+        {{ pimcore_head_title('CoreShop') }}
+        {{ pimcore_head_meta() }}
+    {% endblock %}
+
+    {% block head_stylesheets deferred %}
+        {{ pimcore_head_link() }}
+    {% endblock %}
+</head>
+
+<body>
+{% block header %}
+    <header>
+        {% include '@CoreShopFrontend/_header.html.twig' %}
+    </header>
+{% endblock %}
+
+<div class="main-container container">
+    {% include '@CoreShopFrontend/Common/global_flash_messages.html.twig' %}
+
+    {% block content %}
+    {% endblock %}
+</div>
+
+{% block footer %}
+    {% include '@CoreShopFrontend/_footer.html.twig' %}
+{% endblock %}
+
+{% block scripts deferred %}
+    {{ pimcore_head_script() }}
+{% endblock %}
+</body>
+</html>

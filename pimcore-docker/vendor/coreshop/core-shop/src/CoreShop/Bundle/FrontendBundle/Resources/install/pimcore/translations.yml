@@ -1,0 +1,1171 @@
+translations:
+  coreshop.ui.account:
+    languages:
+        de_CH: 'Benutzerprofil'
+        en: 'Account'
+        de: 'Benutzerprofil'
+
+  coreshop.ui.add:
+      languages:
+          de_CH: 'Hinzufügen'
+          en: 'Add'
+          de: 'Hinzufügen'
+
+  coreshop.ui.add_new_address:
+      languages:
+          de_CH: 'Neue Adresse hinzufügen'
+          en: 'Add a new address'
+          de: 'Neue Adresse hinzufügen'
+
+  coreshop.ui.add_to_cart:
+      languages:
+          de_CH: 'Zum Warenkorb'
+          en: 'Add to Cart'
+          de: 'Zum Warenkorb'
+
+  coreshop.ui.address:
+      languages:
+          de_CH: 'Adresse'
+          en: 'Address'
+          de: 'Adresse'
+
+  coreshop.ui.addresses:
+      languages:
+          de_CH: 'Adressen'
+          en: 'Addresses'
+          de: 'Adressen'
+
+  coreshop.ui.availability:
+      languages:
+          de_CH: 'Verfügbarkeit'
+          en: 'Availability'
+          de: 'Verfügbarkeit'
+
+  coreshop.ui.buy:
+      languages:
+          de_CH: 'Kaufen'
+          en: 'Buy'
+          de: 'Kaufen'
+
+  coreshop.ui.carrier:
+      languages:
+          de_CH: 'Spedition'
+          en: 'Carrier'
+          de: 'Spedition'
+
+  coreshop.ui.carrier.standard:
+      languages:
+          de_CH: 'Standard Spedition'
+          en: 'Default Carrier'
+          de: 'Standard Spedition'
+
+  coreshop.ui.cart:
+      languages:
+          de_CH: 'Warenkorb'
+          en: 'Cart'
+          de: 'Warenkorb'
+
+  coreshop.ui.cart_empty:
+      languages:
+          de_CH: 'Ihr Warenkorb ist leer.'
+          en: 'Your cart is empty.'
+          de: 'Ihr Warenkorb ist leer.'
+
+  coreshop.ui.categories:
+      languages:
+          de_CH: 'Kategorien'
+          en: 'Categories'
+          de: 'Kategorien'
+
+  coreshop.ui.checkout:
+      languages:
+          de_CH: 'Checkout'
+          en: 'Checkout'
+          de: 'Checkout'
+
+  coreshop.ui.checkout.error.cancelled:
+      languages:
+          de_CH: 'Der Bezahlvorgang wurde abgebrochen. Kehren Sie zum Warenkorb zurück, um die Bezahlung erneut durchzuführen.'
+          en: 'The Payment has been cancelled. Please go back to cart and start again.'
+          de: 'Der Bezahlvorgang wurde abgebrochen. Kehren Sie zum Warenkorb zurück, um die Bezahlung erneut durchzuführen.'
+
+  coreshop.ui.checkout.error.default:
+      languages:
+          de_CH: 'Während dem Bezahlvorgang ist ein Fehler aufgetreten.'
+          en: 'There was an Error during the payment process.'
+          de: 'Während dem Bezahlvorgang ist ein Fehler aufgetreten.'
+
+  coreshop.ui.checkout.thank_you:
+        languages:
+          de_CH: 'Vielen Dank für Ihre Bestellung'
+          en: 'Thank you for your Order'
+          de: 'Vielen Dank für Ihre Bestellung'
+
+  coreshop.ui.back_to_home:
+      languages:
+          de_CH: 'Zurück zur Startseite'
+          en: 'Back to Home'
+          de: 'Zurück zur Startseite'
+
+  coreshop.ui.compare:
+      languages:
+          de_CH: 'Vergleichen'
+          en: 'Compare'
+          de: 'Vergleichen'
+
+  coreshop.ui.continue_shopping:
+      languages:
+          de_CH: 'Weiter einkaufen'
+          en: 'Continue Shopping'
+          de: 'Weiter einkaufen'
+
+  coreshop.ui.create_new_account:
+      languages:
+          de_CH: 'Neues Benutzerprofil erstellen'
+          en: 'Create a new Account'
+          de: 'Neues Benutzerprofil erstellen'
+
+  coreshop.ui.currency:
+      languages:
+          de_CH: 'Währung'
+          en: 'Currency'
+          de: 'Währung'
+
+  coreshop.ui.customer:
+      languages:
+          de_CH: 'Kunde'
+          en: 'Customer'
+          de: 'Kunde'
+
+  coreshop.ui.date:
+      languages:
+          de_CH: 'Datum'
+          en: 'Date'
+          de: 'Datum'
+
+  coreshop.ui.delete:
+      languages:
+          de_CH: 'Löschen'
+          en: 'Delete'
+          de: 'Löschen'
+
+  coreshop.ui.description:
+      languages:
+          de_CH: 'Beschreibung'
+          en: 'Description'
+          de: 'Beschreibung'
+
+  coreshop.ui.ean:
+      languages:
+          de_CH: 'EAN'
+          en: 'EAN'
+          de: 'EAN'
+
+  coreshop.ui.edit:
+      languages:
+          de_CH: 'Bearbeiten'
+          en: 'Edit'
+          de: 'Bearbeiten'
+
+  coreshop.ui.filter:
+      languages:
+          de_CH: 'Filter'
+          en: 'Filter'
+          de: 'Filter'
+
+  coreshop.ui.grid_view:
+      languages:
+          de_CH: 'Tabellenansicht'
+          en: 'Grid View'
+          de: 'Tabellenansicht'
+
+  coreshop.ui.guest_register:
+      languages:
+          de_CH: 'Gastkunden Registrierung'
+          en: 'Guest Customer Registration'
+          de: 'Gastkunden Registrierung'
+
+  coreshop.ui.home:
+      languages:
+          de_CH: 'Home'
+          en: 'Home'
+          de: 'Home'
+
+  coreshop.ui.image:
+      languages:
+          de_CH: 'Bild'
+          en: 'Image'
+          de: 'Bild'
+
+  coreshop.ui.in_stock:
+      languages:
+          de_CH: 'Auf Lager'
+          en: 'In Stock'
+          de: 'Auf Lager'
+
+  coreshop.ui.invoice_address:
+      languages:
+          de_CH: 'Rechnungsadresse'
+          en: 'Invoice Address'
+          de: 'Rechnungsadresse'
+
+  coreshop.ui.item_added:
+      languages:
+          de_CH: 'Produkt hinzugefügt'
+          en: 'Item added'
+          de: 'Produkt hinzugefügt'
+
+  coreshop.ui.item_removed:
+      languages:
+          de_CH: 'Produkt entfernt'
+          en: 'Item removed'
+          de: 'Produkt entfernt'
+
+  coreshop.ui.cart_updated:
+      languages:
+          de_CH: 'Warenkorb wurde aktualisiert'
+          en: 'Cart has been updated'
+          de: 'Warenkorb wurde aktualisiert'
+
+  coreshop.ui.cart_update_error:
+      languages:
+          de_CH: 'Fehler beim aktualisieren des Warenkorbs'
+          en: 'Error updating the cart'
+          de: 'Fehler beim aktualisieren des Warenkorbs'
+
+  coreshop.ui.update_cart:
+      languages:
+          de_CH: 'Warenkorb aktualisieren'
+          en: 'Update Cart'
+          de: 'Warenkorb aktualisieren'
+
+  coreshop.ui.cart.shipment.available_carriers:
+      languages:
+          de_CH: 'Verfügbare Versanddienste'
+          en: 'Available Carriers'
+          de: 'Verfügbare Versanddienste'
+
+  coreshop.ui.cart.shipment.is_free_shipping:
+      languages:
+          de_CH: 'Kostenlose Lieferung'
+          en: 'Free Shipping'
+          de: 'Kostenlose Lieferung'
+
+  coreshop.ui.cart.shipment.no_valid_carrier_found:
+      languages:
+          de_CH: 'Es wurden keine Versanddienste gefunden'
+          en: 'No valid carrier found'
+          de: 'Es wurden keine Versanddienste gefunden'
+
+  coreshop.ui.cart.shipment.search_for_carrier:
+      languages:
+          de_CH: 'Passenden Versanddienst finden'
+          en: 'Search for Carrier'
+          de: 'Passenden Versanddienst finden'
+
+  coreshop.ui.items:
+      languages:
+          de_CH: 'Produkte'
+          en: 'Items'
+          de: 'Produkte'
+
+  coreshop.ui.language:
+      languages:
+          de_CH: 'Sprache'
+          en: 'Language'
+          de: 'Sprache'
+
+  coreshop.ui.latest_products:
+      languages:
+          de_CH: 'Neueste Produkte'
+          en: 'Latest Products'
+          de: 'Neueste Produkte'
+
+  coreshop.ui.list_view:
+      languages:
+          de_CH: 'Listenansicht'
+          en: 'List View'
+          de: 'Listenansicht'
+
+  coreshop.ui.login:
+      languages:
+          de_CH: 'Anmelden'
+          en: 'Login'
+          de: 'Anmelden'
+
+  coreshop.ui.login_with_existing_account:
+      languages:
+          de_CH: 'Anmelden mit bestehendem Profil'
+          en: 'Login with existing account'
+          de: 'Anmelden mit bestehendem Profil'
+
+  coreshop.ui.logout:
+      languages:
+          de_CH: 'Abmelden'
+          en: 'Logout'
+          de: 'Abmelden'
+          
+  coreshop.ui.order:
+        languages:
+          de_CH: 'Bestellung'
+          en: 'Order'
+          de: 'Bestellung'
+
+  coreshop.ui.order_history_and_details:
+      languages:
+          de_CH: 'Bestellhistorie'
+          en: 'Order History'
+          de: 'Bestellhistorie'
+
+  coreshop.ui.order_number:
+      languages:
+          de_CH: 'Bestellnummer'
+          en: 'Order Number'
+          de: 'Bestellnummer'
+          
+  coreshop.ui.remove:
+      languages:
+          de_CH: 'Entfernen'
+          en: 'Remove'
+          de: 'Entfernen'
+
+  coreshop.ui.shipment_number:
+      languages:
+          de_CH: 'Versandnummer'
+          en: 'Shipment Number'
+          de: 'Versandnummer'
+
+  coreshop.ui.orders:
+      languages:
+          de_CH: 'Bestellungen'
+          en: 'Orders'
+          de: 'Bestellungen'
+
+  coreshop.ui.payment:
+      languages:
+          de_CH: 'Bezahlung'
+          en: 'Payment'
+          de: 'Bezahlung'
+
+  coreshop.ui.payment_provider:
+      languages:
+          de_CH: 'Zahlungsanbieter'
+          en: 'Payment provider'
+          de: 'Zahlungsanbieter'
+
+  coreshop.ui.accept_terms:
+      languages:
+          de_CH: 'Ich akzeptiere die allgemeinen Geschäftsbedingungen'
+          en: 'I have read and agree to the terms and conditions'
+          de: 'Ich akzeptiere die allgemeinen Geschäftsbedingungen'
+
+  coreshop.form.customer.terms:
+      languages:
+          de_CH: 'Ich akzeptiere die allgemeinen Geschäftsbedingungen'
+          en: 'I have read and agree to the terms and conditions'
+          de: 'Ich akzeptiere die allgemeinen Geschäftsbedingungen'
+
+  coreshop.ui.order_revise:
+      languages:
+          de_CH: 'Zahlungsmöglichkeit korrigieren'
+          en: 'Change Payment Method'
+          de: 'Zahlungsmöglichkeit korrigieren'
+
+  coreshop.ui.order.revise.transaction_cancelled:
+      languages:
+          de_CH: 'Sie haben die Transaktion auf Ihren Wunsch abgebrochen. Sie können eine andere Zahlungsmöglichkeit wählen und erneut die Zahlung durchführen oder die Bestellung abbrechen.'
+          en: 'You have cancelled the transaction. Change the payment method and start again or cancel the order.'
+          de: 'Sie haben die Transaktion auf Ihren Wunsch abgebrochen. Sie können eine andere Zahlungsmöglichkeit wählen und erneut die Zahlung durchführen oder die Bestellung abbrechen.'
+
+  coreshop.ui.order.revise.transaction_failed:
+      languages:
+          de_CH: 'Während der Transaktion ist ein Fehler aufgetreten. Sie können die Zahlungsmöglichkeit ändern, die Zahlung erneut durchführen oder die Bestellung abbrechen.'
+          en: 'There was an error during the transaction. Change the payment method, start again or cancel the order.'
+          de: 'Während der Transaktion ist ein Fehler aufgetreten. Sie können die Zahlungsmöglichkeit ändern, die Zahlung erneut durchführen oder die Bestellung abbrechen.'
+
+  coreshop.ui.order_revise_payment_change_not_allowed:
+      languages:
+          de_CH: 'Änderung der Zahlungsmöglichkeit dieser Bestellung ist nicht mehr erlaubt'
+          en: 'You can no longer change payment of this order'
+          de: 'Änderung der Zahlungsmöglichkeit dieser Bestellung ist nicht mehr erlaubt'
+
+  coreshop.ui.personal_information:
+      languages:
+          de_CH: 'Persönliche Informationen'
+          en: 'Personal Information'
+          de: 'Persönliche Informationen'
+
+  coreshop.ui.change_password:
+      languages:
+          de_CH: 'Passwort ändern'
+          en: 'Change Password'
+          de: 'Passwort ändern'
+
+  coreshop.ui.price:
+      languages:
+          de_CH: 'Preis'
+          en: 'Price'
+          de: 'Preis'
+
+  coreshop.ui.proceed:
+      languages:
+          de_CH: 'Weiter'
+          en: 'Proceed'
+          de: 'Weiter'
+
+  coreshop.ui.back:
+      languages:
+          de_CH: 'Zurück'
+          en: 'Back'
+          de: 'Zurück'
+
+  coreshop.ui.product_details:
+      languages:
+          de_CH: 'Produkt Details'
+          en: 'Product Details'
+          de: 'Produkt Details'
+
+  coreshop.ui.profile:
+      languages:
+          de_CH: 'Profil'
+          en: 'Profile'
+          de: 'Profil'
+
+  coreshop.ui.quantity:
+      languages:
+          de_CH: 'Menge'
+          en: 'Quantity'
+          de: 'Menge'
+
+  coreshop.ui.quote:
+      languages:
+          de_CH: 'Angebot'
+          en: 'Quote'
+          de: 'Angebot'
+
+  coreshop.ui.register:
+      languages:
+          de_CH: 'Registrierung'
+          en: 'Register'
+          de: 'Registrierung'
+
+  coreshop.ui.registration_text:
+      languages:
+          de_CH: 'Einen neuen Account anlegen'
+          en: 'Create a new account'
+          de: 'Einen neuen Account anlegen'
+
+  coreshop.ui.reset_password:
+      languages:
+          de_CH: 'Passwort zurücksetzen'
+          en: 'Reset Password'
+          de: 'Passwort zurücksetzen'
+
+  coreshop.ui.save:
+      languages:
+          de_CH: 'Speichern'
+          en: 'Save'
+          de: 'Speichern'
+
+  coreshop.ui.search:
+      languages:
+          de_CH: 'Suche'
+          en: 'Search'
+          de: 'Suche'
+
+  coreshop.ui.settings:
+      languages:
+          de_CH: 'Einstellungen'
+          en: 'Settings'
+          de: 'Einstellungen'
+
+  coreshop.ui.shipping:
+      languages:
+          de_CH: 'Versand'
+          en: 'Shipping'
+          de: 'Versand'
+
+  coreshop.ui.shipping_address:
+      languages:
+          de_CH: 'Versandadresse'
+          en: 'Shipping Address'
+          de: 'Versandadresse'
+
+  coreshop.ui.shipping_excl:
+      languages:
+          de_CH: 'Versand (exkl. MwSt.)'
+          en: 'Shipping (excl. VAT)'
+          de: 'Versand (exkl. MwSt.)'
+
+  coreshop.ui.shipping_incl:
+      languages:
+          de_CH: 'Versand (inkl. MwSt.)'
+          en: 'Shipping (incl. VAT)'
+          de: 'Versand (inkl. MwSt.)'
+
+  coreshop.ui.shopping_cart:
+      languages:
+          de_CH: 'Warenkorb'
+          en: 'Cart'
+          de: 'Warenkorb'
+
+  coreshop.ui.show:
+      languages:
+          de_CH: 'Anzeigen'
+          en: 'Show'
+          de: 'Anzeigen'
+
+  coreshop.ui.show_detail:
+      languages:
+          de_CH: 'Details anzeigen'
+          en: 'Show Details'
+          de: 'Details anzeigen'
+
+  coreshop.ui.sort:
+      languages:
+          de_CH: 'Sortieren'
+          en: 'Sort'
+          de: 'Sortieren'
+
+  coreshop.ui.sort.name_asc:
+      languages:
+          de_CH: 'Name absteigend'
+          en: 'Name ascending'
+          de: 'Name absteigend'
+
+  coreshop.ui.sort.name_desc:
+      languages:
+          de_CH: 'Name aufsteigend'
+          en: 'Name descending'
+          de: 'Name aufsteigend'
+
+  coreshop.ui.state:
+      languages:
+          de_CH: 'Status'
+          en: 'State'
+          de: 'Status'
+
+  coreshop.ui.workflow.state.coreshop_order:
+      languages:
+          de_CH: 'Status'
+          en: 'State'
+          de: 'Status'
+
+  coreshop.ui.workflow.state.coreshop_order_payment:
+      languages:
+          de_CH: 'Zahlungsstatus'
+          en: 'Payment State'
+          de: 'Zahlungsstatus'
+
+  coreshop.ui.workflow.state.coreshop_order_invoice:
+      languages:
+          de_CH: 'Rechnungsstatus'
+          en: 'Invoice State'
+          de: 'Rechnungsstatus'
+
+  coreshop.ui.workflow.state.coreshop_order_shipment:
+      languages:
+          de_CH: 'Versandstatus'
+          en: 'State'
+          de: 'Versandstatus'
+
+  coreshop.ui.workflow.state.coreshop_order.new:
+      languages:
+          de_CH: 'Neu'
+          en: 'New'
+          de: 'Neu'
+
+  coreshop.ui.workflow.state.coreshop_order.initialized:
+      languages:
+          de_CH: 'Initialisiert'
+          en: 'Initialized'
+          de: 'Initialisiert'
+
+  coreshop.ui.workflow.state.coreshop_order.confirmed:
+      languages:
+          de_CH: 'Bestätigt'
+          en: 'Confirmed'
+          de: 'Bestätigt'
+          
+  coreshop.ui.workflow.state.coreshop_order.cancelled:
+      languages:
+          de_CH: 'Storniert'
+          en: 'Cancelled'
+          de: 'Storniert'
+
+  coreshop.ui.workflow.state.coreshop_order.complete:
+      languages:
+          de_CH: 'Abgeschlossen'
+          en: 'Complete'
+          de: 'Abgeschlossen'
+
+  coreshop.ui.workflow.state.coreshop_order_payment.new:
+      languages:
+          de_CH: 'Neu'
+          en: 'New'
+          de: 'Neu'
+
+  coreshop.ui.workflow.state.coreshop_order_payment.awaiting_payment:
+      languages:
+          de_CH: 'Warten auf Zahlung'
+          en: 'Awaiting Payment'
+          de: 'Warten auf Zahlung'
+
+  coreshop.ui.workflow.state.coreshop_order_payment.partially_authorized:
+      languages:
+          de_CH: 'Zahlung teilweise autorisiert'
+          en: 'Partially Authorized'
+          de: 'Zahlung teilweise autorisiert'
+
+  coreshop.ui.workflow.state.coreshop_order_payment.authorized:
+      languages:
+          de_CH: 'Autorisiert'
+          en: 'Authorized'
+          de: 'Autorisiert'
+
+  coreshop.ui.workflow.state.coreshop_order_payment.partially_paid:
+      languages:
+          de_CH: 'Zahlung teilweise eingegangen'
+          en: 'Partially Paid'
+          de: 'Zahlung teilweise eingegangen'
+
+  coreshop.ui.workflow.state.coreshop_order_payment.cancelled:
+      languages:
+          de_CH: 'Storniert'
+          en: 'Cancelled'
+          de: 'Storniert'
+
+  coreshop.ui.workflow.state.coreshop_order_payment.paid:
+      languages:
+          de_CH: 'Bezahlt'
+          en: 'Paid'
+          de: 'Bezahlt'
+
+  coreshop.ui.workflow.state.coreshop_order_payment.partially_refunded:
+      languages:
+          de_CH: 'Zahlung teilweise zurückerstattet'
+          en: 'Partially Refunded'
+          de: 'Zahlung teilweise zurückerstattet'
+
+  coreshop.ui.workflow.state.coreshop_order_payment.refunded:
+      languages:
+          de_CH: 'Zurückerstattet'
+          en: 'Refunded'
+          de: 'Zurückerstattet'
+
+  coreshop.ui.workflow.state.coreshop_order_shipment.new:
+      languages:
+          de_CH: 'Neu'
+          en: 'New'
+          de: 'Neu'
+
+  coreshop.ui.workflow.state.coreshop_order_shipment.ready:
+      languages:
+          de_CH: 'Versand in Vorbereitung'
+          en: 'Shipment in Preparation'
+          de: 'Versand in Vorbereitung'
+
+  coreshop.ui.workflow.state.coreshop_order_shipment.cancelled:
+      languages:
+          de_CH: 'Storniert'
+          en: 'Cancelled'
+          de: 'Storniert'
+
+  coreshop.ui.workflow.state.coreshop_order_shipment.partially_shipped:
+      languages:
+          de_CH: 'Teilweise versendet'
+          en: 'Partially Shipped'
+          de: 'Teilweise versendet'
+
+  coreshop.ui.workflow.state.coreshop_order_shipment.shipped:
+      languages:
+          de_CH: 'Versendet'
+          en: 'Shipped'
+          de: 'Versendet'
+
+  coreshop.ui.workflow.state.coreshop_order_invoice.new:
+      languages:
+          de_CH: 'Neu'
+          en: 'New'
+          de: 'Neu'
+
+  coreshop.ui.workflow.state.coreshop_order_invoice.cancelled:
+      languages:
+          de_CH: 'Storniert'
+          en: 'Cancelled'
+          de: 'Storniert'
+
+  coreshop.ui.workflow.state.coreshop_order_invoice.invoiced:
+      languages:
+          de_CH: 'Fakturiert'
+          en: 'Invoiced'
+          de: 'Fakturiert'
+
+  coreshop.ui.subtotal:
+      languages:
+          de_CH: 'Zwischensumme'
+          en: 'Subtotal'
+          de: 'Zwischensumme'
+
+  coreshop.ui.subtotal_excl:
+      languages:
+          de_CH: 'Zwischensumme (exkl. MwSt.)'
+          en: 'Subtotal (excl. VAT)'
+          de: 'Zwischensumme (exkl. MwSt.)'
+
+  coreshop.ui.subtotal_inc:
+      languages:
+          de_CH: 'Zwischensumme (inkl. MwSt.)'
+          en: 'Subtotal (incl. VAT)'
+          de: 'Zwischensumme (inkl. MwSt.)'
+
+  coreshop.ui.summary:
+      languages:
+          de_CH: 'Zusammenfassung'
+          en: 'Summary'
+          de: 'Zusammenfassung'
+
+  coreshop.ui.toggle_navigation:
+      languages:
+          de_CH: 'Navigation umschalten'
+          en: 'Toggle navigation'
+          de: 'Navigation umschalten'
+
+  coreshop.ui.total:
+      languages:
+          de_CH: 'Gesamt'
+          en: 'Total'
+          de: 'Gesamt'
+
+  coreshop.ui.total_tax:
+      languages:
+          de_CH: 'Gesamt Steuer'
+          en: 'Total Tax'
+          de: 'Gesamt Steuer'
+
+  coreshop.ui.tax_name:
+      languages:
+          de_CH: 'Steuer %s'
+          en: 'Tax %s'
+          de: 'Steuer %s'
+
+  coreshop.ui.comment:
+      languages:
+          de_CH: 'Kommentar'
+          en: 'Comment'
+          de: 'Kommentar'
+
+  coreshop.ui.wishlist:
+      languages:
+          de_CH: 'Wunschliste'
+          en: 'Wishlist'
+          de: 'Wunschliste'
+
+  coreshop.ui.wishlist_empty:
+      languages:
+          de_CH: 'Ihre Wunschliste ist leer'
+          en: 'Your wishlist is empty'
+          de: 'Ihre Wunschliste ist leer'
+
+  coreshop.ui.error:
+      languages:
+          de_CH: 'Es ist ein Fehler aufgetreten'
+          en: 'There was an Error'
+          de: 'Es ist ein Fehler aufgetreten'
+
+  coreshop.ui.success:
+      languages:
+          de_CH: 'Der Vorgang war erfolgreich'
+          en: 'The operation was successful'
+          de: 'Der Vorgang war erfolgreich'
+
+  coreshop.ui.error.voucher.not_found:
+      languages:
+          de_CH: 'Der angegebene Gutscheincode ist ungültig'
+          en: 'This Voucher is invalid'
+          de: 'Der angegebene Gutscheincode ist ungültig'
+
+  coreshop.ui.error.voucher.invalid:
+      languages:
+          de_CH: 'Der angegebene Gutscheincode ist ungültig'
+          en: 'This Voucher is invalid'
+          de: 'Der angegebene Gutscheincode ist ungültig'
+
+  coreshop.ui.success.voucher.stored:
+      languages:
+          de_CH: 'Gutscheincode wurde erfolgreich angewendet'
+          en: 'Voucher has been successfully applied'
+          de: 'Gutscheincode wurde erfolgreich angewendet'
+
+  coreshop.ui.success.voucher.successfully_removed:
+      languages:
+          de_CH: 'Gutscheincode wurde erfolgreich ausgetragen'
+          en: 'Voucher ha been successfully removed'
+          de: 'Gutscheincode wurde erfolgreich ausgetragen'
+
+  coreshop.ui.voucher.code:
+      languages:
+          de_CH: 'Gutscheincode'
+          en: 'Voucher'
+          de: 'Gutscheincode'
+
+  coreshop.ui.voucher.apply_code:
+      languages:
+          de_CH: 'Einlösen'
+          en: 'Apply'
+          de: 'Einlösen'
+
+  coreshop.ui.discount_incl:
+      languages:
+          de_CH: 'Rabatt (inkl. MwSt.)'
+          en: 'Discount (incl. VAT)'
+          de: 'Rabatt (inkl. MwSt.)'
+
+  coreshop.ui.discount_excl:
+      languages:
+          de_CH: 'Rabatt (exkl. MwSt.)'
+          en: 'Discount (excl. VAT)'
+          de: 'Rabatt (exkl. MwSt.)'
+
+  coreshop.ui.gift_item:
+      languages:
+          de_CH: 'Geschenkartikel'
+          en: 'Gift Item'
+          de: 'Geschenkartikel'
+
+  coreshop.ui.ascending:
+      languages:
+          de_CH: 'Aufsteigend'
+          en: 'Ascending'
+          de: 'Aufsteigend'
+
+  coreshop.ui.descending:
+      languages:
+          de_CH: 'Absteigend'
+          en: 'Descending'
+          de: 'Absteigend'
+
+  coreshop.cart_item.quantity.min:
+      languages:
+          de_CH: 'Die Menge eines Produktes im Warenkorb kann nicht kleiner als 1 sein.'
+          de: 'Die Menge eines Produktes im Warenkorb kann nicht kleiner als 1 sein.'
+          en: 'Quantity of an order item cannot be lower than 1.'
+
+  coreshop.form.address.choose_address:
+      languages:
+          de_CH: 'Adresse wählen'
+          en: 'Choose Address'
+          de: 'Adresse wählen'
+
+  coreshop.form.address.shipping:
+      languages:
+          de_CH: 'Versandadresse'
+          en: 'Shipping Address'
+          de: 'Versandadresse'
+
+  coreshop.form.address.invoice:
+      languages:
+          de_CH: 'Rechnungsadresse'
+          en: 'Invoice Address'
+          de: 'Rechnungsadresse'
+
+  coreshop.form.address.use_invoice_as_shipping:
+      languages:
+          de_CH: 'Rechnungsadresse ist Lieferadresse'
+          en: 'Invoice Address is Shipping Address'
+          de: 'Rechnungsadresse ist Lieferadresse'
+
+  coreshop.form.customer_registration.customer:
+      languages:
+          de_CH: 'Benutzerdaten'
+          en: 'Customer Data'
+          de: 'Benutzerdaten'
+
+  coreshop.form.customer_registration.address:
+      languages:
+          de_CH: 'Adressinformationen'
+          en: 'Address Information'
+          de: 'Adressinformationen'
+
+  coreshop.form.address.salutation:
+      languages:
+          de_CH: 'Anrede'
+          en: 'Salutation'
+          de: 'Anrede'
+
+  coreshop.form.address.company:
+      languages:
+          de_CH: 'Firmenname'
+          en: 'Company'
+          de: 'Firmenname'
+
+  coreshop.form.address.firstname:
+      languages:
+          de_CH: 'Vorname'
+          en: 'First Name'
+          de: 'Vorname'
+
+  coreshop.form.address.lastname:
+      languages:
+          de_CH: 'Nachname'
+          en: 'Last Name'
+          de: 'Nachname'
+
+  coreshop.form.address.street:
+      languages:
+          de_CH: 'Strasse'
+          en: 'Street'
+          de: 'Straße'
+
+  coreshop.form.address.number:
+      languages:
+          de_CH: 'Nummer'
+          en: 'Number'
+          de: 'Nummer'
+
+  coreshop.form.address.postcode:
+      languages:
+          de_CH: 'PLZ'
+          en: 'ZIP'
+          de: 'PLZ'
+
+  coreshop.form.address.city:
+      languages:
+          de_CH: 'Stadt'
+          en: 'City'
+          de: 'Stadt'
+
+  coreshop.form.address.country:
+      languages:
+          de_CH: 'Land'
+          en: 'Country'
+          de: 'Land'
+
+  coreshop.form.address.phone_number:
+      languages:
+          de_CH: 'Telefonnummer'
+          en: 'Phone Number'
+          de: 'Telefonnummer'
+
+  coreshop.ui.customer.password_successfully_changed:
+      languages:
+          de_CH: 'Passwort wurde erfolgreich geändert'
+          en: 'Password has been successfully changed'
+          de: 'Passwort wurde erfolgreich geändert'
+
+  coreshop.ui.customer.profile_successfully_updated:
+      languages:
+          de_CH: 'Profil wurde erfolgreich gespeichert'
+          en: 'Profile has been successfully saved'
+          de: 'Profil wurde erfolgreich gespeichert'
+
+  coreshop.ui.customer.address_successfully_added:
+      languages:
+          de_CH: 'Neue Adresse wurde erfolgreich erstellt'
+          en: 'New Address has been successfully created'
+          de: 'Neue Adresse wurde erfolgreich erstellt'
+
+  coreshop.ui.customer.address_successfully_updated:
+      languages:
+          de_CH: 'Adresse wurde erfolgreich aktualisiert'
+          en: 'Address has been successfully updated'
+          de: 'Adresse wurde erfolgreich aktualisiert'
+
+  coreshop.ui.customer.address_successfully_deleted:
+      languages:
+          de_CH: 'Adresse wurde gelöscht'
+          en: 'Address has been removed'
+          de: 'Adresse wurde gelöscht'
+
+  coreshop.ui.newsletter_confirmed:
+      languages:
+          de_CH: 'Vielen Dank. Ihre E-Mail-Adresse ist nun bestätigt.'
+          en: 'Thank you. Your e-mail address is now confirmed.'
+          de: 'Vielen Dank. Ihre E-Mail-Adresse ist nun bestätigt.'
+
+  coreshop.ui.newsletter_confirmation_error:
+      languages:
+          de_CH: 'Während der Bestätigung Ihrer E-Mail-Adresse ist ein Fehler aufgetreten.'
+          en: 'Error confirming your e-mail address.'
+          de: 'Während der Bestätigung Ihrer E-Mail-Adresse ist ein Fehler aufgetreten.'
+
+  coreshop.form.customer.salutation:
+      languages:
+          de_CH: 'Anrede'
+          en: 'Salutation'
+          de: 'Anrede'
+
+  coreshop.form.customer.salutation.mr:
+      languages:
+          de_CH: 'Herr'
+          en: 'Mr.'
+          de: 'Herr'
+
+  coreshop.form.customer.salutation.mrs:
+      languages:
+          de_CH: 'Frau'
+          en: 'Mrs.'
+          de: 'Frau'
+
+  coreshop.form.customer.firstname:
+      languages:
+          de_CH: 'Vorname'
+          en: 'First Name'
+          de: 'Vorname'
+
+  coreshop.form.customer.lastname:
+      languages:
+          de_CH: 'Nachname'
+          en: 'Last Name'
+          de: 'Nachname'
+
+  coreshop.form.customer.email:
+      languages:
+          de_CH: 'E-Mail-Adresse'
+          en: 'Email Address'
+          de: 'E-Mail-Adresse'
+
+  coreshop.form.customer.email_repeat:
+      languages:
+          de_CH: 'E-Mail-Adresse wiederholen'
+          en: 'Repeat Email Addres'
+          de: 'E-Mail-Adresse wiederholen'
+
+  coreshop.form.customer.current_password:
+      languages:
+          de_CH: 'Aktuelles Passwort'
+          en: 'Current Password'
+          de: 'Aktuelles Passwort'
+
+  coreshop.form.customer.password:
+      languages:
+          de_CH: 'Passwort'
+          en: 'Password'
+          de: 'Passwort'
+
+  coreshop.form.customer.password_repeat:
+      languages:
+          de_CH: 'Passwort wiederholen'
+          en: 'Repeat Password'
+          de: 'Passwort wiederholen'
+
+  coreshop.form.customer.new_password:
+      languages:
+          de_CH: 'Neues Passwort'
+          en: 'New Password'
+          de: 'Neues Passwort'
+
+  coreshop.form.customer.new_password_repeat:
+      languages:
+          de_CH: 'Neues Passwort wiederholen'
+          en: 'New Repeat Password'
+          de: 'Neues Passwort wiederholen'
+
+  coreshop.form.customer.default_address:
+      languages:
+          de_CH: 'Standardadresse'
+          en: 'Default Address'
+          de: 'Standardadresse'
+
+  coreshop.form.customer.gender:
+      languages:
+          de_CH: 'Geschlecht'
+          en: 'Gender'
+          de: 'Geschlecht'
+
+  coreshop.form.customer.gender.male:
+      languages:
+          de_CH: 'Männlich'
+          en: 'Male'
+          de: 'Männlich'
+
+  coreshop.form.customer.gender.female:
+      languages:
+          de_CH: 'Weiblich'
+          en: 'Female'
+          de: 'Weiblich'
+
+  coreshop.form.customer.newsletter:
+      languages:
+          de_CH: 'Newsletter'
+          en: 'Newsletter'
+          de: 'Newsletter'
+          
+  coreshop.form.customer.newsletter.subscribe:
+      languages:
+          de_CH: 'Ja, ich möchte den Newsletter abonnieren'
+          en: 'I would like to subscribe to the newsletter'
+          de: 'Ja, ich möchte den Newsletter abonnieren'
+
+  coreshop.form.login.username:
+      languages:
+          de_CH: 'Benutzername'
+          en: 'Username'
+          de: 'Benutzername'
+
+  coreshop.form.login.password:
+      languages:
+          de_CH: 'Passwort'
+          en: 'Password'
+          de: 'Passwort'
+
+  coreshop.form.login.remember_me:
+      languages:
+          de_CH: 'Zugangsdaten merken'
+          en: 'Remember me'
+          de: 'Zugangsdaten merken'
+
+  coreshop.form.cart_rule.coupon:
+      languages:
+          de_CH: 'Gutscheincode'
+          en: 'Voucher Code'
+          de: 'Gutscheincode'
+
+  coreshop.form.search.text:
+      languages:
+          de_CH: 'Suchen'
+          en: 'Search'
+          de: 'Suchen'
+
+  coreshop.form.order.revise.cancel:
+      languages:
+          de_CH: 'Bestellung stornieren und Warenkorb wiederherstellen'
+          en: 'Cancel order and restore cart'
+          de: 'Bestellung stornieren und Warenkorb wiederherstellen'
+
+  coreshop.form.order.revise.submit_payment:
+      languages:
+          de_CH: 'Bezahlung erneut durchführen'
+          en: 'Process payment'
+          de: 'Bezahlung erneut durchführen'
+
+  coreshop.form.cart.carrier.country:
+      languages:
+          de_CH: 'Land'
+          en: 'Country'
+          de: 'Land'
+
+  coreshop.form.cart.carrier.zip:
+      languages:
+          de_CH: 'PLZ'
+          en: 'Post Code'
+          de: 'PLZ'
+
+  coreshop.form.cart.carrier.submit:
+      languages:
+          de_CH: 'Suchen'
+          en: 'Search'
+          de: 'Suchen'
+
+  coreshop.global_error.cart_has_changed:
+      languages:
+          de_CH: 'Produkte sind nicht mehr verfügbar. Bitte überprüfen Sie den Warenkorb auf Vollständigkeit.'
+          en: 'Some Products are not available anymore. Please check your cart for completeness.'
+          de: 'Produkte sind nicht mehr verfügbar. Bitte überprüfen Sie den Warenkorb auf Vollständigkeit.'
+          
+  coreshop.product.tax.inc:
+        languages:
+          de_CH: 'inkl. %s%% Steuer'
+          en: 'incl. %s%% Tax'
+          de: 'inkl. %s%% Steuer'
+

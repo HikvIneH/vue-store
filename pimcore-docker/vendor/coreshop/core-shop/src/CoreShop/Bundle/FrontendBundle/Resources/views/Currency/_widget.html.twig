@@ -1,0 +1,10 @@
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="currencyDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        {{ 'coreshop.ui.currency'|trans }}
+    </a>
+    <div class="dropdown-menu" aria-labelledby="currencyDropdown">
+        {% for currency in currencies %}
+            <a class="dropdown-item" href="{{ coreshop_path('coreshop_switch_currency', {'currencyCode': currency.getIsoCode}) }}">{{ currency.getName() }}</a>
+        {% endfor %}
+    </div>
+</li>

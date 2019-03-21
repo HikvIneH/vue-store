@@ -1,0 +1,51 @@
+{
+    "name": "ongr/elasticsearch-bundle",
+    "description": "Elasticsearch bundle for Symfony.",
+    "type": "symfony-bundle",
+    "homepage": "http://ongr.io",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "ONGR team",
+            "homepage": "http://www.ongr.io"
+        }
+    ],
+    "require": {
+        "php": ">=5.6,<7.4",
+        "symfony/framework-bundle": "^2.8|^3.0|^4",
+        "symfony/console": "^2.8|^3.0|^4",
+        "symfony/stopwatch": "^2.8|^3.0|^4",
+        "symfony/templating": "^2.8|^3.0|^4",
+        "doctrine/annotations": "~1.2",
+        "doctrine/inflector": "~1.0",
+        "doctrine/cache": "~1.4",
+        "doctrine/collections": "~1.4",
+        "monolog/monolog": "~1.10",
+        "ongr/elasticsearch-dsl": "~5.0"
+    },
+    "require-dev": {
+        "mikey179/vfsStream": "~1.4",
+        "phpunit/phpunit": "~5.6",
+        "squizlabs/php_codesniffer": "~2.0",
+        "satooshi/php-coveralls": "~1.0",
+        "symfony/browser-kit" : "^3.4|^4",
+        "symfony/expression-language" : "^3.4|^4",
+        "symfony/twig-bundle": "^3.4|^4",
+        "symfony/serializer": "^3.4|^4",
+        "symfony/yaml": "^3.4|^4",
+        "symfony/dependency-injection": "^3.4|^4",
+        "symfony/validator": "^3.4|^4",
+        "symfony/options-resolver": "^3.4|^4",
+        "symfony/var-dumper": "^3.4|^4"
+    },
+    "autoload": {
+        "psr-4": { "ONGR\\ElasticsearchBundle\\": "" },
+        "exclude-from-classmap": ["/Tests/", "/Test/"]
+    },
+    "minimum-stability": "dev",
+    "extra": {
+        "branch-alias": {
+            "dev-master": "5.1-dev"
+        }
+    }
+}

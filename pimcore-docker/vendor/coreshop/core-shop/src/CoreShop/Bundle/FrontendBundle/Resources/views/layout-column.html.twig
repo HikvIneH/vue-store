@@ -1,0 +1,23 @@
+{% extends '@CoreShopFrontend/layout.html.twig' %}
+
+{% block content %}
+<div id="main-container-home" class="container p-0">
+    <div class="row">
+        <div class="col-md-3">
+            {% if category is defined %}
+                {{ render(controller('coreshop.frontend.controller.category:menuLeftAction', {activeCategory: category})) }}
+            {% else %}
+                {{ render(controller('coreshop.frontend.controller.category:menuLeftAction')) }}
+            {% endif %}
+
+            {% block left %}
+            {% endblock %}
+        </div>
+
+        <div class="col-md-9">
+            {% block center %}
+            {% endblock %}
+        </div>
+    </div>
+</div>
+{% endblock %}

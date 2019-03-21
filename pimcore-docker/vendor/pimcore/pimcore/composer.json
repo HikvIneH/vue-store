@@ -1,0 +1,128 @@
+{
+  "name": "pimcore/pimcore",
+  "type": "library",
+  "description": "Content & Product Management Framework (CMS/PIM/E-Commerce)",
+  "keywords": [
+    "CMS",
+    "PIM",
+    "DAM",
+    "E-Commerce",
+    "RAD",
+    "Product Information Management"
+  ],
+  "homepage": "http://www.pimcore.org/",
+  "license": "GPL-3.0-or-later",
+  "authors": [
+    {
+      "name": "pimcore Team",
+      "email": "info@pimcore.com",
+      "homepage": "http://www.pimcore.org/",
+      "role": "Developer"
+    }
+  ],
+  "support": {
+    "issues": "https://github.com/pimcore/pimcore/issues",
+    "wiki": "https://pimcore.com/docs/5.0.x/index.html",
+    "source": "https://github.com/pimcore/pimcore",
+    "forum": "https://groups.google.com/forum/#!forum/pimcore",
+    "docs": "https://pimcore.com/docs/5.0.x/index.html"
+  },
+  "require": {
+    "php": ">=7.1",
+    "ext-SimpleXML": "*",
+    "ext-dom": "*",
+    "ext-exif": "*",
+    "ext-fileinfo": "*",
+    "ext-gd": "*",
+    "ext-intl": "*",
+    "ext-iconv": "*",
+    "ext-mbstring": "*",
+    "ext-mysqli": "*",
+    "ext-pdo_mysql": "*",
+    "ext-zip": "*",
+    "ext-zlib": "*",
+    "pimcore/core-version": "5.7.1",
+    "amnuts/opcache-gui": "^2.4.0",
+    "cache/tag-interop": "^1",
+    "colinmollenhour/credis": "^1.10.0",
+    "composer/ca-bundle": "^1",
+    "defuse/php-encryption": "^2.2.0",
+    "doctrine/annotations": "^1.6.0",
+    "doctrine/collections": "^1.5.0",
+    "doctrine/common": "^2.9.0",
+    "doctrine/dbal": "^2.8.0",
+    "doctrine/doctrine-bundle": "^1.9.1",
+    "doctrine/doctrine-migrations-bundle": "^1.3.1",
+    "doctrine/inflector": "^1.3.0",
+    "egulias/email-validator": "^2.1.5",
+    "endroid/qr-code": "^3.4.4",
+    "geoip2/geoip2": "^2.9",
+    "google/apiclient": "^2.0",
+    "guzzlehttp/guzzle": "^6.3",
+    "hybridauth/hybridauth": "^2.12",
+    "lcobucci/jwt": "^3.2",
+    "league/csv": "^9.1",
+    "linfo/linfo": "^4.0.0",
+    "mjaschen/phpgeo": "^2.0",
+    "mpratt/embera": "^1.9.3",
+    "myclabs/deep-copy": "^1.3",
+    "myclabs/php-enum": "^1.5",
+    "neitanod/forceutf8": "^2.0.2",
+    "nesbot/carbon": "^1.34.0 || ^2.11.0",
+    "ocramius/package-versions": "^1.2",
+    "pear/net_url2": "^2.2",
+    "phive/twig-extensions-deferred": "^2.0",
+    "piwik/device-detector": "^3.9",
+    "presta/sitemap-bundle": "^1.5",
+    "ramsey/uuid": "^3.8",
+    "sabre/dav": "^3.2",
+    "sensio/distribution-bundle": "^5.0.19",
+    "sensio/framework-extra-bundle": "^3.0.2",
+    "sensio/generator-bundle": "^3.0",
+    "sensiolabs/ansi-to-html": "^1.1",
+    "symfony-cmf/routing-bundle": "^2.0",
+    "symfony/monolog-bundle": "^3.1.0",
+    "symfony/swiftmailer-bundle": "^3.2.2",
+    "symfony/symfony": "^3.4.17",
+    "tijsverkoyen/css-to-inline-styles": "^2.2.1",
+    "twig/extensions": "^1.5",
+    "twig/twig": "^2.0",
+    "umpirsky/country-list": "^2.0.4",
+    "vrana/adminer": "^4.6.3",
+    "vrana/jush": "~2.0.2",
+    "zendframework/zend-paginator": "^2.7",
+    "zendframework/zend-servicemanager": "^3.2",
+    "scheb/two-factor-bundle": "^3.8"
+  },
+  "require-dev": {
+    "cache/integration-tests": "^0.16.0",
+    "codeception/codeception": "~2.4.5"
+  },
+  "suggest": {
+    "ext-curl": "*",
+    "ext-imagick": "*",
+    "ext-redis": "*",
+    "klarna/checkout": "1.2.0",
+    "elasticsearch/elasticsearch": "2.0.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Pimcore\\Model\\": "models",
+      "Pimcore\\": "lib",
+      "Pimcore\\Bundle\\": "bundles"
+    },
+    "classmap": [
+      "lib/Pimcore.php"
+    ],
+    "exclude-from-classmap": [
+      "lib/compatibility-stubs.php",
+      "lib/Pimcore/Bundle/EcommerceFrameworkBundle/config/namespace_compatibility.php"
+    ]
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "5.7-dev"
+    }
+  },
+  "bin": ["bin/pimcore-install"]
+}

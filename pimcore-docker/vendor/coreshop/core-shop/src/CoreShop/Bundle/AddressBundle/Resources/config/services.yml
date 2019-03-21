@@ -1,0 +1,59 @@
+imports:
+    - { resource: "services/form.yml" }
+    - { resource: "services/profiler.yml" }
+    - { resource: "services/pimcore.yml" }
+
+services:
+    _defaults:
+        public: true
+
+    coreshop.context.country.composite:
+        class: CoreShop\Component\Address\Context\CompositeCountryContext
+        public: false
+
+    coreshop.context.country.request_based:
+        class: CoreShop\Component\Address\Context\RequestBased\CountryContext
+        public: false
+        arguments:
+            - '@coreshop.context.country.request_based.resolver'
+            - '@request_stack'
+        tags:
+            - { name: coreshop.context.country }
+
+    coreshop.context.country.fixed:
+        class: CoreShop\Component\Address\Context\FixedCountryContext
+        tags:
+            - { name: coreshop.context.country }
+
+    coreshop.context.country.request_based.resolver.composite:
+        class: CoreShop\Component\Address\Context\RequestBased\CompositeRequestResolver
+        public: false
+
+    coreshop.context.country.request_based.resolver.geo_lite:
+        class: CoreShop\Component\Address\Context\RequestBased\GeoLiteBasedRequestResolver
+        public: false
+        arguments:
+            - '@coreshop.repository.country'
+        tags:
+            - { name: coreshop.context.country.request_based.resolver, priority: 10 }
+
+    coreshop.address.formatter:
+        class: CoreShop\Component\Address\Formatter\AddressFormatter
+        arguments:
+            - '@pimcore.translator'
+
+    coreshop.templating.helper.format_address:
+        class: CoreShop\Bundle\AddressBundle\Templating\Helper\FormatAddressHelper
+        arguments:
+            - '@coreshop.address.formatter'
+        lazy: true
+        tags:
+            - { name: templating.helper, alias: coreshop_format_address }
+
+    coreshop.twig.extension.address:
+        class: CoreShop\Bundle\AddressBundle\Twig\FormatAddressExtension
+        public: false
+        arguments:
+            - '@coreshop.templating.helper.format_address'
+        tags:
+            - { name: twig.extension }

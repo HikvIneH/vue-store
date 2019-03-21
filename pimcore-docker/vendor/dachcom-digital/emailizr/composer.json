@@ -1,0 +1,34 @@
+{
+    "name": "dachcom-digital/emailizr",
+    "type": "pimcore-bundle",
+    "license": "GPL-3.0-or-later",
+    "description": "Pimcore 5.x Emailizr - create HTML E-Mails the right way!",
+    "keywords": ["pimcore", "email", "inky", "inline style"],
+    "homepage": "https://github.com/dachcom-digital/pimcore-emailizr",
+    "authors": [
+        {
+            "name": "DACHCOM.DIGITAL Stefan Hagspiel",
+            "email": "shagspiel@dachcom.ch",
+            "homepage": "http://www.dachcom.com/",
+            "role": "Developer"
+        }
+    ],
+
+    "autoload": {
+        "psr-4": {
+            "EmailizrBundle\\": "src/EmailizrBundle"
+        }
+    },
+
+    "extra": {
+        "pimcore": {
+            "bundles": [
+                "EmailizrBundle\\EmailizrBundle"
+            ]
+        }
+    },
+    "require": {
+        "lorenzo/pinky":"^1.0.3",
+        "pelago/emogrifier": "^2.0.0"
+    }
+}

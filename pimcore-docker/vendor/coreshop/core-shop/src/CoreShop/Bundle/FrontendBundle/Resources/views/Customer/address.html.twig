@@ -1,0 +1,58 @@
+{% extends '@CoreShopFrontend/layout-full.html.twig' %}
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+
+{% block center %}
+    <div id="main-container" class="container p-0">
+
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{{ coreshop_path('coreshop_index') }}">{{ 'coreshop.ui.home'|trans }}</a></li>
+                <li class="breadcrumb-item"><a href="{{ coreshop_path(customer, 'coreshop_customer_profile') }}">{{ 'coreshop.ui.profile'|trans }}</a></li>
+                <li class="breadcrumb-item"><a href="{{ coreshop_path(customer, 'coreshop_customer_addresses') }}">{{ 'coreshop.ui.addresses'|trans }}</a></li>
+                <li class="breadcrumb-item active">{{ 'coreshop.ui.addresses'|trans }}</li>
+            </ol>
+        </nav>
+
+        <h2 class="main-heading text-center">
+            {{ 'coreshop.ui.address'|trans }} <br/>
+            {% if not address.getId %}
+                <span>{{ 'coreshop.ui.add_new_address'|trans }}</span>
+            {% endif %}
+        </h2>
+
+        <section class="registration-area">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="card card-smart">
+                        <div class="card-body">
+                            {{ form_start(form) }}
+                                {{ form_errors(form) }}
+
+                                {{ form_row(form.company) }}
+                                {{ form_row(form.salutation) }}
+                                {{ form_row(form.firstname) }}
+                                {{ form_row(form.lastname) }}
+                                {{ form_row(form.street) }}
+                                {{ form_row(form.number) }}
+                                {{ form_row(form.postcode) }}
+                                {{ form_row(form.city) }}
+                                {{ form_row(form.country) }}
+                                {{ form_row(form.phoneNumber) }}
+
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-success">
+                                        {% if not address.getId %}
+                                            {{ 'coreshop.ui.add'|trans }}
+                                        {% else %}
+                                            {{ 'coreshop.ui.save'|trans }}
+                                        {% endif %}
+                                    </button>
+                                </div>
+                            {{ form_end(form) }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+{% endblock %}
