@@ -1,3 +1,5 @@
 /var/logs/*
 /var/config/GeoLite2-City.mmdb
 /var/cache/*
+/var/sessions/*
+/config/jwt/*    
